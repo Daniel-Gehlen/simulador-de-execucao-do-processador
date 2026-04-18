@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simulador de Execução - Processador Passo a Passo</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>🔍 Simulador de Execução do Processador</h1>
+      <div class="subtitle">
+        Clique em NEXT para executar cada instrução - Veja o processador em
+        ação!
+      </div>
+
+      <div class="nav">
+        <label for="exampleSelect">Escolha um exemplo:</label>
+        <select id="exampleSelect">
+          <option value="sumLoop">Loop de Soma</option>
+          <option value="factorial">Fatorial</option>
+          <option value="fibonacci">Fibonacci</option>
+          <option value="maxArray">Máximo em Array</option>
+        </select>
+      </div>
+
+      <div class="main-content">
+        <!-- Código -->
+        <div class="code-panel">
+          <h2>📝 Código Fonte</h2>
+          <div class="code-container">
+            <pre><code id="codeLines"></code></pre>
+          </div>
+        </div>
+
+        <!-- Variáveis -->
+        <div class="variables-panel">
+          <h2>📊 Variáveis na Memória</h2>
+          <table class="var-table" id="varTable">
+            <tr>
+              <td>i (contador)</td>
+              <td id="var_i">-</td>
+            </tr>
+            <tr>
+              <td>vezes (limite)</td>
+              <td id="var_vezes">-</td>
+            </tr>
+            <tr>
+              <td>soma (acumulador)</td>
+              <td id="var_soma">-</td>
+            </tr>
+            <tr>
+              <td>x (entrada)</td>
+              <td id="var_x">-</td>
+            </tr>
+            <tr>
+              <td>resultado (retorno)</td>
+              <td id="var_resultado">-</td>
+            </tr>
+            <tr>
+              <td>n (parâmetro)</td>
+              <td id="var_n">-</td>
+            </tr>
+            <tr>
+              <td>a (fibonacci)</td>
+              <td id="var_a">-</td>
+            </tr>
+            <tr>
+              <td>b (fibonacci)</td>
+              <td id="var_b">-</td>
+            </tr>
+            <tr>
+              <td>temp (temporário)</td>
+              <td id="var_temp">-</td>
+            </tr>
+            <tr>
+              <td>max (máximo)</td>
+              <td id="var_max">-</td>
+            </tr>
+            <tr>
+              <td>arr (array)</td>
+              <td id="var_arr">-</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+
+      <!-- Controles -->
+      <div class="control-panel">
+        <button id="prevBtn" disabled>◀ VOLTAR</button>
+        <button id="resetBtn">🔄 RESET</button>
+        <button id="nextBtn">NEXT ▶</button>
+      </div>
+
+      <!-- Informações -->
+      <div class="info-panel">
+        <h3>⚙️ Estado do Processador</h3>
+        <div class="step-info" id="stepInfo">Aguardando início...</div>
+        <div class="step-info" id="pcInfo">PC (Program Counter): 0</div>
+        <div class="output-area" id="outputArea">
+          <div class="output-line">▶ Programa pronto para execução</div>
+        </div>
+        <div class="status waiting" id="status">⏸ PRONTO</div>
+      </div>
+    </div>
+
+    <script src="examples.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
