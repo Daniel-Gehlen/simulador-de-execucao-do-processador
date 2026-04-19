@@ -19,146 +19,420 @@
       "line": 0,
       "action": "int arr[] = {3,7,2,9,5};",
       "desc": "Inicializa array na memória",
-      "vars": { "arr": [3, 7, 2, 9, 5] }
+      "vars": {
+        "arr": [
+          3,
+          7,
+          2,
+          9,
+          5
+        ]
+      },
+      "descEn": "Initialize array in memory"
     },
     {
       "line": 1,
       "action": "int max = arr[0];",
       "desc": "max = 3",
-      "vars": { "arr": [3, 7, 2, 9, 5], "max": 3 }
+      "vars": {
+        "arr": [
+          3,
+          7,
+          2,
+          9,
+          5
+        ],
+        "max": 3
+      },
+      "descEn": "max = 3"
     },
     {
       "line": 4,
       "action": "for(int i = 1; i < 5; i++)",
       "desc": "Loop para verificar elementos",
-      "vars": { "arr": [3, 7, 2, 9, 5], "max": 3, "i": 1 }
+      "vars": {
+        "arr": [
+          3,
+          7,
+          2,
+          9,
+          5
+        ],
+        "max": 3,
+        "i": 1
+      },
+      "descEn": "Loop to check elements"
     },
     {
       "line": 5,
       "action": "if(arr[1] > max) (7 > 3)",
       "desc": "VERDADEIRO → entra if",
-      "vars": { "arr": [3, 7, 2, 9, 5], "max": 3, "i": 1 }
+      "vars": {
+        "arr": [
+          3,
+          7,
+          2,
+          9,
+          5
+        ],
+        "max": 3,
+        "i": 1
+      },
+      "descEn": "TRUE → enters if"
     },
     {
       "line": 6,
       "action": "max = arr[1]",
       "desc": "max = 7",
-      "vars": { "arr": [3, 7, 2, 9, 5], "max": 7, "i": 1 }
+      "vars": {
+        "arr": [
+          3,
+          7,
+          2,
+          9,
+          5
+        ],
+        "max": 7,
+        "i": 1
+      },
+      "descEn": "max = 7"
     },
     {
       "line": 8,
       "action": "Fim if, volta loop",
       "desc": "",
-      "vars": { "arr": [3, 7, 2, 9, 5], "max": 7, "i": 1 }
+      "vars": {
+        "arr": [
+          3,
+          7,
+          2,
+          9,
+          5
+        ],
+        "max": 7,
+        "i": 1
+      },
+      "actionEn": "End if, return to loop"
     },
     {
       "line": 4,
       "action": "i++",
       "desc": "i = 2",
-      "vars": { "arr": [3, 7, 2, 9, 5], "max": 7, "i": 2 }
+      "vars": {
+        "arr": [
+          3,
+          7,
+          2,
+          9,
+          5
+        ],
+        "max": 7,
+        "i": 2
+      },
+      "descEn": "i = 2"
     },
     {
       "line": 4,
       "action": "i < 5? (2 < 5)",
       "desc": "VERDADEIRO",
-      "vars": { "arr": [3, 7, 2, 9, 5], "max": 7, "i": 2 }
+      "vars": {
+        "arr": [
+          3,
+          7,
+          2,
+          9,
+          5
+        ],
+        "max": 7,
+        "i": 2
+      },
+      "descEn": "TRUE"
     },
     {
       "line": 5,
       "action": "if(arr[2] > max) (2 > 7)",
       "desc": "FALSO → pula if",
-      "vars": { "arr": [3, 7, 2, 9, 5], "max": 7, "i": 2 }
+      "vars": {
+        "arr": [
+          3,
+          7,
+          2,
+          9,
+          5
+        ],
+        "max": 7,
+        "i": 2
+      },
+      "descEn": "FALSE → skip if"
     },
     {
       "line": 8,
       "action": "Volta loop",
       "desc": "",
-      "vars": { "arr": [3, 7, 2, 9, 5], "max": 7, "i": 2 }
+      "vars": {
+        "arr": [
+          3,
+          7,
+          2,
+          9,
+          5
+        ],
+        "max": 7,
+        "i": 2
+      },
+      "actionEn": "Return to loop"
     },
     {
       "line": 4,
       "action": "i++",
       "desc": "i = 3",
-      "vars": { "arr": [3, 7, 2, 9, 5], "max": 7, "i": 3 }
+      "vars": {
+        "arr": [
+          3,
+          7,
+          2,
+          9,
+          5
+        ],
+        "max": 7,
+        "i": 3
+      },
+      "descEn": "i = 3"
     },
     {
       "line": 4,
       "action": "3 < 5",
       "desc": "VERDADEIRO",
-      "vars": { "arr": [3, 7, 2, 9, 5], "max": 7, "i": 3 }
+      "vars": {
+        "arr": [
+          3,
+          7,
+          2,
+          9,
+          5
+        ],
+        "max": 7,
+        "i": 3
+      },
+      "descEn": "TRUE"
     },
     {
       "line": 5,
       "action": "if(arr[3] > max) (9 > 7)",
       "desc": "VERDADEIRO",
-      "vars": { "arr": [3, 7, 2, 9, 5], "max": 7, "i": 3 }
+      "vars": {
+        "arr": [
+          3,
+          7,
+          2,
+          9,
+          5
+        ],
+        "max": 7,
+        "i": 3
+      },
+      "descEn": "TRUE"
     },
     {
       "line": 6,
       "action": "max = arr[3]",
       "desc": "max = 9",
-      "vars": { "arr": [3, 7, 2, 9, 5], "max": 9, "i": 3 }
+      "vars": {
+        "arr": [
+          3,
+          7,
+          2,
+          9,
+          5
+        ],
+        "max": 9,
+        "i": 3
+      },
+      "descEn": "max = 9"
     },
     {
       "line": 8,
       "action": "",
       "desc": "",
-      "vars": { "arr": [3, 7, 2, 9, 5], "max": 9, "i": 3 }
+      "vars": {
+        "arr": [
+          3,
+          7,
+          2,
+          9,
+          5
+        ],
+        "max": 9,
+        "i": 3
+      }
     },
     {
       "line": 4,
       "action": "i++",
       "desc": "i = 4",
-      "vars": { "arr": [3, 7, 2, 9, 5], "max": 9, "i": 4 }
+      "vars": {
+        "arr": [
+          3,
+          7,
+          2,
+          9,
+          5
+        ],
+        "max": 9,
+        "i": 4
+      },
+      "descEn": "i = 4"
     },
     {
       "line": 4,
       "action": "4 < 5",
       "desc": "VERDADEIRO",
-      "vars": { "arr": [3, 7, 2, 9, 5], "max": 9, "i": 4 }
+      "vars": {
+        "arr": [
+          3,
+          7,
+          2,
+          9,
+          5
+        ],
+        "max": 9,
+        "i": 4
+      },
+      "descEn": "TRUE"
     },
     {
       "line": 5,
       "action": "if(arr[4] > max) (5 > 9)",
       "desc": "FALSO",
-      "vars": { "arr": [3, 7, 2, 9, 5], "max": 9, "i": 4 }
+      "vars": {
+        "arr": [
+          3,
+          7,
+          2,
+          9,
+          5
+        ],
+        "max": 9,
+        "i": 4
+      },
+      "descEn": "FALSE"
     },
     {
       "line": 8,
       "action": "",
       "desc": "",
-      "vars": { "arr": [3, 7, 2, 9, 5], "max": 9, "i": 4 }
+      "vars": {
+        "arr": [
+          3,
+          7,
+          2,
+          9,
+          5
+        ],
+        "max": 9,
+        "i": 4
+      }
     },
     {
       "line": 4,
       "action": "i++",
       "desc": "i = 5",
-      "vars": { "arr": [3, 7, 2, 9, 5], "max": 9, "i": 5 }
+      "vars": {
+        "arr": [
+          3,
+          7,
+          2,
+          9,
+          5
+        ],
+        "max": 9,
+        "i": 5
+      },
+      "descEn": "i = 5"
     },
     {
       "line": 4,
       "action": "5 < 5",
       "desc": "FALSO → sai loop",
-      "vars": { "arr": [3, 7, 2, 9, 5], "max": 9, "i": 5 }
+      "vars": {
+        "arr": [
+          3,
+          7,
+          2,
+          9,
+          5
+        ],
+        "max": 9,
+        "i": 5
+      },
+      "descEn": "FALSE → exit loop"
     },
     {
       "line": 10,
       "action": "printf(\"Máximo: 9\\n\")",
       "desc": "Exibe resultado",
-      "vars": { "arr": [3, 7, 2, 9, 5], "max": 9, "i": 5 },
-      "output": "Máximo: 9"
+      "vars": {
+        "arr": [
+          3,
+          7,
+          2,
+          9,
+          5
+        ],
+        "max": 9,
+        "i": 5
+      },
+      "output": "Máximo: 9",
+      "descEn": "Displays result",
+      "outputEn": "Maximum: 9"
     },
     {
       "line": 12,
       "action": "return 9",
       "desc": "Retorna máximo",
-      "vars": { "arr": [3, 7, 2, 9, 5], "max": 9, "i": 5 }
+      "vars": {
+        "arr": [
+          3,
+          7,
+          2,
+          9,
+          5
+        ],
+        "max": 9,
+        "i": 5
+      },
+      "descEn": "Returns max"
     },
     {
       "line": 12,
       "action": "FIM",
       "desc": "",
-      "vars": { "arr": [3, 7, 2, 9, 5], "max": 9, "i": 5 }
+      "vars": {
+        "arr": [
+          3,
+          7,
+          2,
+          9,
+          5
+        ],
+        "max": 9,
+        "i": 5
+      },
+      "actionEn": "END"
     }
+  ],
+  "codeLinesEn": [
+    "1   int arr[] = {3, 7, 2, 9, 5};",
+    "2   int max = arr[0];",
+    "3   ",
+    "4   for(int i = 1; i < 5; i++) {",
+    "5       if(arr[i] > max) {",
+    "6           max = arr[i];",
+    "7       }",
+    "8   }",
+    "9   ",
+    "10  printf(\"Maximum: %d\\n\", max);",
+    "11  ",
+    "12  return max;"
   ]
 }

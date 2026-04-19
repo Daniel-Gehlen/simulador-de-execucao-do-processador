@@ -23,13 +23,29 @@ class Simulator {
         instruction: "📌 Instrução:",
         processorAction: "💡 O que o processador faz:",
         programCounter: "PC (Program Counter)",
+        lineLabel: "Linha",
         ready: "⏸ PRONTO",
+        waitingText: "Aguardando início...",
         running: "▶ EXECUTANDO",
         finished: "✅ FINALIZADO",
         back: "◀ VOLTAR",
         reset: "🔄 RESET",
         next: "NEXT ▶",
         programReady: "▶ Programa pronto para execução",
+        pageTitle: "Simulador de Execução do Processador",
+        variableLabels: {
+          i: "i (contador)",
+          vezes: "vezes (limite)",
+          soma: "soma (acumulador)",
+          x: "x (entrada)",
+          resultado: "resultado (retorno)",
+          n: "n (parâmetro)",
+          a: "a (fibonacci)",
+          b: "b (fibonacci)",
+          temp: "temp (temporário)",
+          max: "max (máximo)",
+          arr: "arr (array)",
+        },
         examples: {
           sumLoop: "Loop de Soma",
           factorial: "Fatorial",
@@ -48,13 +64,29 @@ class Simulator {
         instruction: "📌 Instruction:",
         processorAction: "💡 What the processor does:",
         programCounter: "PC (Program Counter)",
+        lineLabel: "Line",
         ready: "⏸ READY",
+        waitingText: "Waiting to start...",
         running: "▶ RUNNING",
         finished: "✅ FINISHED",
         back: "◀ BACK",
         reset: "🔄 RESET",
         next: "NEXT ▶",
         programReady: "▶ Program ready for execution",
+        pageTitle: "Processor Execution Simulator",
+        variableLabels: {
+          i: "i (counter)",
+          vezes: "vezes (limit)",
+          soma: "soma (accumulator)",
+          x: "x (input)",
+          resultado: "resultado (return)",
+          n: "n (parameter)",
+          a: "a (fibonacci)",
+          b: "b (fibonacci)",
+          temp: "temp (temporary)",
+          max: "max (maximum)",
+          arr: "arr (array)",
+        },
         examples: {
           sumLoop: "Sum Loop",
           factorial: "Factorial",
@@ -80,11 +112,12 @@ class Simulator {
       const response = await fetch(path);
       const example = await response.json();
       this.codeLines = example.codeLines;
+      this.codeLinesEn = example.codeLinesEn || null;
       this.steps = example.steps;
       this.resetSimulation();
       this.renderCode();
     } catch (error) {
-      console.error("Erro ao carregar exemplo:", error);
+      console.error("Error loading example:", error);
     }
   }
 
@@ -92,7 +125,12 @@ class Simulator {
     const container = document.getElementById("codeLines");
     container.innerHTML = "";
 
-    this.codeLines.forEach((line, idx) => {
+    const codeLines =
+      this.currentLang === "en" && this.codeLinesEn
+        ? this.codeLinesEn
+        : this.codeLines;
+
+    codeLines.forEach((line, idx) => {
       const span = document.createElement("span");
       span.className = "line";
       span.id = `line-${idx}`;
@@ -104,12 +142,15 @@ class Simulator {
   toggleLanguage() {
     this.currentLang = this.currentLang === "pt" ? "en" : "pt";
     this.updateLanguage();
+    this.renderCode();
     this.resetSimulation();
   }
 
   updateLanguage() {
     const lang = this.langs[this.currentLang];
-    document.querySelector("h1").textContent = lang.title;
+    document.title = lang.pageTitle;
+    document.documentElement.lang = this.currentLang === "pt" ? "pt-BR" : "en";
+    document.querySelector(".header h1").textContent = lang.title;
     document.querySelector(".subtitle").textContent = lang.subtitle;
     document.querySelector("label[for='exampleSelect']").textContent =
       lang.chooseExample;
@@ -127,6 +168,15 @@ class Simulator {
     for (let option of select.options) {
       option.textContent = lang.examples[option.value];
     }
+
+    // Update variable labels
+    const vars = lang.variableLabels || {};
+    Object.entries(vars).forEach(([key, labelText]) => {
+      const labelElem = document.getElementById(`label_var_${key}`);
+      if (labelElem) {
+        labelElem.textContent = labelText;
+      }
+    });
   }
 
   updateCodeHighlight() {
@@ -197,23 +247,31 @@ class Simulator {
   updateUI() {
     if (this.currentStep >= 0 && this.currentStep < this.steps.length) {
       const step = this.steps[this.currentStep];
+      const actionText =
+        this.currentLang === "en" ? step.actionEn || step.action : step.action;
+      const descText =
+        this.currentLang === "en" ? step.descEn || step.desc : step.desc;
 
       // Atualiza descrição
       document.getElementById("stepInfo").innerHTML = `
-                <strong>${this.langs[this.currentLang].instruction}</strong> ${step.action}<br>
-                <strong>${this.langs[this.currentLang].processorAction}</strong> ${step.desc}
+                <strong>${this.langs[this.currentLang].instruction}</strong> ${actionText}<br>
+                <strong>${this.langs[this.currentLang].processorAction}</strong> ${descText}
             `;
 
       // Atualiza PC
       document.getElementById("pcInfo").innerHTML =
-        `${this.langs[this.currentLang].programCounter}: ${this.currentStep + 1} / ${this.steps.length} | Linha: ${step.line + 1}`;
+        `${this.langs[this.currentLang].programCounter}: ${this.currentStep + 1} / ${this.steps.length} | ${this.langs[this.currentLang].lineLabel}: ${step.line + 1}`;
 
       // Atualiza variáveis
       this.updateVariables(step.vars);
 
       // Adiciona output se houver
       if (step.output) {
-        this.addOutput(step.output);
+        const outputText =
+          this.currentLang === "en"
+            ? step.outputEn || step.output
+            : step.output;
+        this.addOutput(outputText);
       }
 
       // Atualiza status
@@ -275,9 +333,10 @@ class Simulator {
     this.updateVariables({});
 
     // Reseta UI
-    document.getElementById("stepInfo").innerHTML = "Aguardando início...";
+    document.getElementById("stepInfo").innerHTML =
+      this.langs[this.currentLang].waitingText;
     document.getElementById("pcInfo").innerHTML =
-      `${this.langs[this.currentLang].programCounter}: 0`;
+      `${this.langs[this.currentLang].programCounter}: 0 | ${this.langs[this.currentLang].lineLabel}: 0`;
     document.getElementById("status").className = "status waiting";
     document.getElementById("status").innerHTML =
       this.langs[this.currentLang].ready;
