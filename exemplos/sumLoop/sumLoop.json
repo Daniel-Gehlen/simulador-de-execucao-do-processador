@@ -21,7 +21,8 @@
       "vars": {
         "soma": 0
       },
-      "descEn": "Declare variable 'soma' and initialize to 0 in RAM"
+      "descEn": "Declare variable 'sum' and initialize to 0 in RAM",
+      "actionEn": "int sum = 0;"
     },
     {
       "line": 1,
@@ -31,7 +32,8 @@
         "vezes": 3,
         "soma": 0
       },
-      "descEn": "Declare variable 'vezes' and initialize to 3 (loop limit)"
+      "descEn": "Declare variable 'times' and initialize to 3 (loop limit)",
+      "actionEn": "int times = 3;"
     },
     {
       "line": 3,
@@ -66,8 +68,8 @@
         "soma": 0,
         "i": 1
       },
-      "actionEn": "Test i <= vezes? (1 <= 3)",
-      "descEn": "Comparison: i(1) is less than or equal to vezes(3)? TRUE → enters the loop"
+      "actionEn": "Test i <= times? (1 <= 3)",
+      "descEn": "Comparison: i(1) is less than or equal to times(3)? TRUE → enters the loop"
     },
     {
       "line": 5,
@@ -80,7 +82,8 @@
       },
       "output": "Volta 1",
       "descEn": "System call - displays 'Volta 1' in the console",
-      "outputEn": "Round 1"
+      "outputEn": "Round 1",
+      "actionEn": "printf(\"Round 1\\n\")"
     },
     {
       "line": 6,
@@ -91,7 +94,8 @@
         "soma": 1,
         "i": 1
       },
-      "descEn": "ALU adds values. Result 1 stored in 'soma'"
+      "descEn": "ALU adds values. Result 1 stored in 'sum'",
+      "actionEn": "sum = sum + i (sum = 0 + 1)"
     },
     {
       "line": 7,
@@ -126,7 +130,7 @@
         "soma": 1,
         "i": 2
       },
-      "actionEn": "Test i <= vezes? (2 <= 3)",
+      "actionEn": "Test i <= times? (2 <= 3)",
       "descEn": "Comparison: TRUE → execute loop again"
     },
     {
@@ -140,7 +144,8 @@
       },
       "output": "Volta 2",
       "descEn": "Displays 'Volta 2' in the console",
-      "outputEn": "Round 2"
+      "outputEn": "Round 2",
+      "actionEn": "printf(\"Round 2\\n\")"
     },
     {
       "line": 6,
@@ -151,7 +156,8 @@
         "soma": 3,
         "i": 2
       },
-      "descEn": "ALU: 1 + 2 = 3. 'soma' now equals 3"
+      "descEn": "ALU: 1 + 2 = 3. 'sum' now equals 3",
+      "actionEn": "sum = sum + i (sum = 1 + 2)"
     },
     {
       "line": 7,
@@ -186,7 +192,7 @@
         "soma": 3,
         "i": 3
       },
-      "actionEn": "Test i <= vezes? (3 <= 3)",
+      "actionEn": "Test i <= times? (3 <= 3)",
       "descEn": "Comparison: TRUE → execute one more time"
     },
     {
@@ -200,7 +206,8 @@
       },
       "output": "Volta 3",
       "descEn": "Displays 'Volta 3' in the console",
-      "outputEn": "Round 3"
+      "outputEn": "Round 3",
+      "actionEn": "printf(\"Round 3\\n\")"
     },
     {
       "line": 6,
@@ -211,7 +218,8 @@
         "soma": 6,
         "i": 3
       },
-      "descEn": "ALU: 3 + 3 = 6. 'soma' now equals 6"
+      "descEn": "ALU: 3 + 3 = 6. 'sum' now equals 6",
+      "actionEn": "sum = sum + i (sum = 3 + 3)"
     },
     {
       "line": 7,
@@ -246,7 +254,7 @@
         "soma": 6,
         "i": 4
       },
-      "actionEn": "Test i <= vezes? (4 <= 3)",
+      "actionEn": "Test i <= times? (4 <= 3)",
       "descEn": "Comparison: FALSE → exit loop"
     },
     {
@@ -271,7 +279,9 @@
         "i": 4
       },
       "output": "Soma total: 6",
-      "descEn": "Displays final result"
+      "descEn": "Displays final result",
+      "actionEn": "printf(\"Total sum: 6\\n\")",
+      "outputEn": "Total sum: 6"
     },
     {
       "line": 11,
@@ -283,7 +293,8 @@
         "i": 4,
         "resultado": 6
       },
-      "descEn": "Function returns value 6 to caller"
+      "descEn": "Function returns value 6 to caller",
+      "actionEn": "return sum (return 6)"
     },
     {
       "line": 11,
@@ -300,16 +311,16 @@
     }
   ],
   "codeLinesEn": [
-    "1   int soma = 0;",
-    "2   int vezes = 3;",
+    "1   int sum = 0;",
+    "2   int times = 3;",
     "3   ",
-    "4   for(int i = 1; i <= vezes; i++) {",
+    "4   for(int i = 1; i <= times; i++) {",
     "5       printf(\"Round %d\\n\", i);",
-    "6       soma = soma + i;",
+    "6       sum = sum + i;",
     "7   }",
     "8   ",
-    "9   printf(\"Total sum: %d\\n\", soma);",
+    "9   printf(\"Total sum: %d\\n\", sum);",
     "10  ",
-    "11  return soma;"
+    "11  return sum;"
   ]
 }

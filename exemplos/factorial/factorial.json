@@ -31,7 +31,7 @@
         "n": 5,
         "resultado": 1
       },
-      "descEn": "Declare variable 'resultado' and initialize to 1"
+      "descEn": "Declare variable 'result' and initialize to 1"
     },
     {
       "line": 3,
@@ -65,7 +65,8 @@
         "resultado": 1,
         "i": 1
       },
-      "descEn": "TRUE → enters the loop"
+      "descEn": "TRUE → enters the loop",
+      "actionEn": "Test i <= n? (1 <= 5)"
     },
     {
       "line": 5,
@@ -89,7 +90,7 @@
         "resultado": 1,
         "i": 1
       },
-      "descEn": "Multiply resultado by i"
+      "descEn": "Multiply result by i"
     },
     {
       "line": 7,
@@ -123,7 +124,8 @@
         "resultado": 1,
         "i": 2
       },
-      "descEn": "TRUE"
+      "descEn": "TRUE",
+      "actionEn": "Test i <= n? (2 <= 5)"
     },
     {
       "line": 5,
@@ -147,7 +149,7 @@
         "resultado": 2,
         "i": 2
       },
-      "descEn": "resultado = 2"
+      "descEn": "result = 2"
     },
     {
       "line": 7,
@@ -158,7 +160,8 @@
         "resultado": 2,
         "i": 2
       },
-      "actionEn": "Return"
+      "actionEn": "Return",
+      "descEn": ""
     },
     {
       "line": 4,
@@ -180,7 +183,8 @@
         "resultado": 2,
         "i": 3
       },
-      "descEn": "TRUE"
+      "descEn": "TRUE",
+      "actionEn": "Test 3 <= 5"
     },
     {
       "line": 5,
@@ -203,7 +207,7 @@
         "resultado": 6,
         "i": 3
       },
-      "descEn": "resultado = 6"
+      "descEn": "result = 6"
     },
     {
       "line": 7,
@@ -235,7 +239,8 @@
         "resultado": 6,
         "i": 4
       },
-      "descEn": "TRUE"
+      "descEn": "TRUE",
+      "actionEn": "Test 4 <= 5"
     },
     {
       "line": 5,
@@ -258,7 +263,7 @@
         "resultado": 24,
         "i": 4
       },
-      "descEn": "resultado = 24"
+      "descEn": "result = 24"
     },
     {
       "line": 7,
@@ -290,7 +295,8 @@
         "resultado": 24,
         "i": 5
       },
-      "descEn": "TRUE"
+      "descEn": "TRUE",
+      "actionEn": "Test 5 <= 5"
     },
     {
       "line": 5,
@@ -313,7 +319,7 @@
         "resultado": 120,
         "i": 5
       },
-      "descEn": "resultado = 120"
+      "descEn": "result = 120"
     },
     {
       "line": 7,
@@ -345,7 +351,8 @@
         "resultado": 120,
         "i": 6
       },
-      "descEn": "FALSE → exits loop"
+      "descEn": "FALSE → exits loop",
+      "actionEn": "Test 6 <= 5"
     },
     {
       "line": 9,
@@ -386,15 +393,15 @@
   ],
   "codeLinesEn": [
     "1   int n = 5;",
-    "2   int resultado = 1;",
+    "2   int result = 1;",
     "3   ",
     "4   for(int i = 1; i <= n; i++) {",
     "5       printf(\"Multiplying by %d\\n\", i);",
-    "6       resultado = resultado * i;",
+    "6       result = result * i;",
     "7   }",
     "8   ",
-    "9   printf(\"Factorial of %d is %d\\n\", n, resultado);",
+    "9   printf(\"Factorial of %d is %d\\n\", n, result);",
     "10  ",
-    "11  return resultado;"
+    "11  return result;"
   ]
 }

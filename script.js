@@ -76,10 +76,10 @@ class Simulator {
         pageTitle: "Processor Execution Simulator",
         variableLabels: {
           i: "i (counter)",
-          vezes: "vezes (limit)",
-          soma: "soma (accumulator)",
+          vezes: "times (limit)",
+          soma: "sum (accumulator)",
           x: "x (input)",
-          resultado: "resultado (return)",
+          resultado: "result (return)",
           n: "n (parameter)",
           a: "a (fibonacci)",
           b: "b (fibonacci)",
@@ -98,11 +98,12 @@ class Simulator {
     this.init();
   }
 
-  init() {
-    this.loadExample(this.currentExample);
+  async init() {
+    await this.loadExample(this.currentExample);
     this.setupEventListeners();
     this.setupKeyboardShortcuts();
     this.updateLanguage();
+    this.renderCode();
   }
 
   async loadExample(exampleKey) {
@@ -116,6 +117,15 @@ class Simulator {
       this.steps = example.steps;
       this.resetSimulation();
       this.renderCode();
+      // Atualiza labels das variáveis para o idioma atual
+      const lang = this.langs[this.currentLang];
+      const vars = lang.variableLabels || {};
+      Object.entries(vars).forEach(([key, labelText]) => {
+        const labelElem = document.getElementById(`label_var_${key}`);
+        if (labelElem) {
+          labelElem.textContent = labelText;
+        }
+      });
     } catch (error) {
       console.error("Error loading example:", error);
     }
