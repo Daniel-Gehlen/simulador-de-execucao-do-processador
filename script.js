@@ -30,6 +30,12 @@ class Simulator {
         reset: "🔄 RESET",
         next: "NEXT ▶",
         programReady: "▶ Programa pronto para execução",
+        examples: {
+          sumLoop: "Loop de Soma",
+          factorial: "Fatorial",
+          fibonacci: "Fibonacci",
+          maxArray: "Máximo em Array",
+        },
       },
       en: {
         title: "🔍 Processor Execution Simulator",
@@ -49,6 +55,12 @@ class Simulator {
         reset: "🔄 RESET",
         next: "NEXT ▶",
         programReady: "▶ Program ready for execution",
+        examples: {
+          sumLoop: "Sum Loop",
+          factorial: "Factorial",
+          fibonacci: "Fibonacci",
+          maxArray: "Maximum in Array",
+        },
       },
     };
     this.init();
@@ -93,6 +105,28 @@ class Simulator {
     this.currentLang = this.currentLang === "pt" ? "en" : "pt";
     this.updateLanguage();
     this.resetSimulation();
+  }
+
+  updateLanguage() {
+    const lang = this.langs[this.currentLang];
+    document.querySelector("h1").textContent = lang.title;
+    document.querySelector(".subtitle").textContent = lang.subtitle;
+    document.querySelector("label[for='exampleSelect']").textContent =
+      lang.chooseExample;
+    document.querySelector(".code-panel h2").textContent = lang.codeSource;
+    document.querySelector(".variables-panel h2").textContent = lang.memoryVars;
+    document.querySelector(".info-panel h3").textContent = lang.processorState;
+    document.getElementById("prevBtn").textContent = lang.back;
+    document.getElementById("resetBtn").textContent = lang.reset;
+    document.getElementById("nextBtn").textContent = lang.next;
+    document.getElementById("langBtn").textContent =
+      this.currentLang === "pt" ? "EN" : "PT";
+
+    // Update select options
+    const select = document.getElementById("exampleSelect");
+    for (let option of select.options) {
+      option.textContent = lang.examples[option.value];
+    }
   }
 
   updateCodeHighlight() {

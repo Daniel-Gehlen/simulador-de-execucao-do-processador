@@ -193,6 +193,62 @@ code {
     flex-shrink: 0;
 }
 
+button {
+    padding: 8px 20px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-family: monospace;
+    background: #0d1117;
+    color: #eee;
+    border: 1px solid #333;
+}
+
+button:hover {
+    background: #161b22;
+    transform: scale(1.02);
+}
+
+button#nextBtn {
+    background: #00d9ff;
+    color: #000;
+    border: 1px solid #00d9ff;
+}
+
+button#nextBtn:hover {
+    background: #00b8d9;
+}
+
+button#prevBtn {
+    background: #ff6b35;
+    color: #fff;
+    border: 1px solid #ff6b35;
+}
+
+button#prevBtn:hover {
+    background: #e55a2b;
+}
+
+button#resetBtn {
+    background: #333;
+    color: #fff;
+    border: 1px solid #555;
+}
+
+button#resetBtn:hover {
+    background: #444;
+}
+
+button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+    background: #222;
+}
+
 .info-panel {
     margin-top: 10px;
     background: #0d1117;
