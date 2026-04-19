@@ -61,7 +61,8 @@
         "max": 3,
         "i": 1
       },
-      "descEn": "Loop to check elements"
+      "descEn": "Loop to check elements",
+      "actionEn": "for(int i = 1; i < 5; i++)"
     },
     {
       "line": 5,
@@ -78,7 +79,8 @@
         "max": 3,
         "i": 1
       },
-      "descEn": "TRUE → enters if"
+      "descEn": "TRUE → enters if",
+      "actionEn": "if(arr[1] > max) (7 > 3)"
     },
     {
       "line": 6,
@@ -112,7 +114,8 @@
         "max": 7,
         "i": 1
       },
-      "actionEn": "End if, return to loop"
+      "actionEn": "End if, return to loop",
+      "descEn": ""
     },
     {
       "line": 4,
@@ -146,7 +149,8 @@
         "max": 7,
         "i": 2
       },
-      "descEn": "TRUE"
+      "descEn": "TRUE",
+      "actionEn": "i < 5? (2 < 5)"
     },
     {
       "line": 5,
@@ -163,7 +167,8 @@
         "max": 7,
         "i": 2
       },
-      "descEn": "FALSE → skip if"
+      "descEn": "FALSE → skip if",
+      "actionEn": "if(arr[2] > max) (2 > 7)"
     },
     {
       "line": 8,
@@ -180,7 +185,8 @@
         "max": 7,
         "i": 2
       },
-      "actionEn": "Return to loop"
+      "actionEn": "Return to loop",
+      "descEn": ""
     },
     {
       "line": 4,
@@ -214,7 +220,8 @@
         "max": 7,
         "i": 3
       },
-      "descEn": "TRUE"
+      "descEn": "TRUE",
+      "actionEn": "3 < 5"
     },
     {
       "line": 5,
@@ -231,7 +238,8 @@
         "max": 7,
         "i": 3
       },
-      "descEn": "TRUE"
+      "descEn": "TRUE",
+      "actionEn": "if(arr[3] > max) (9 > 7)"
     },
     {
       "line": 6,
@@ -298,7 +306,8 @@
         "max": 9,
         "i": 4
       },
-      "descEn": "TRUE"
+      "descEn": "TRUE",
+      "actionEn": "4 < 5"
     },
     {
       "line": 5,
@@ -315,7 +324,8 @@
         "max": 9,
         "i": 4
       },
-      "descEn": "FALSE"
+      "descEn": "FALSE",
+      "actionEn": "if(arr[4] > max) (5 > 9)"
     },
     {
       "line": 8,
@@ -365,7 +375,8 @@
         "max": 9,
         "i": 5
       },
-      "descEn": "FALSE → exit loop"
+      "descEn": "FALSE → exit loop",
+      "actionEn": "5 < 5"
     },
     {
       "line": 10,
@@ -418,7 +429,8 @@
         "max": 9,
         "i": 5
       },
-      "actionEn": "END"
+      "actionEn": "END",
+      "descEn": "Program finished"
     }
   ],
   "codeLinesEn": [

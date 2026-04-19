@@ -85,7 +85,8 @@
         "b": 1,
         "i": 2
       },
-      "descEn": "Loop for next terms"
+      "descEn": "Loop for next terms",
+      "actionEn": "for(int i = 2; i < n; i++)"
     },
     {
       "line": 9,
@@ -150,7 +151,8 @@
         "b": 1,
         "i": 3
       },
-      "descEn": "Increment i"
+      "descEn": "Increment i",
+      "actionEn": "i++"
     },
     {
       "line": 8,
@@ -162,7 +164,8 @@
         "b": 1,
         "i": 3
       },
-      "descEn": "TRUE"
+      "descEn": "TRUE",
+      "actionEn": "i < n? (3 < 5)"
     },
     {
       "line": 9,
@@ -175,7 +178,8 @@
         "i": 3,
         "temp": 2
       },
-      "descEn": "temp = 2"
+      "descEn": "temp = 2",
+      "actionEn": "temp = 1 + 1"
     },
     {
       "line": 10,
@@ -225,7 +229,8 @@
         "b": 2,
         "i": 4
       },
-      "descEn": "i = 4"
+      "descEn": "i = 4",
+      "actionEn": "i++"
     },
     {
       "line": 8,
@@ -237,7 +242,8 @@
         "b": 2,
         "i": 4
       },
-      "descEn": "TRUE"
+      "descEn": "TRUE",
+      "actionEn": "4 < 5"
     },
     {
       "line": 9,
@@ -250,7 +256,8 @@
         "i": 4,
         "temp": 3
       },
-      "descEn": "temp = 3"
+      "descEn": "temp = 3",
+      "actionEn": "temp = 1 + 2"
     },
     {
       "line": 10,
@@ -300,7 +307,8 @@
         "b": 3,
         "i": 5
       },
-      "descEn": "i = 5"
+      "descEn": "i = 5",
+      "actionEn": "i++"
     },
     {
       "line": 8,
@@ -312,7 +320,8 @@
         "b": 3,
         "i": 5
       },
-      "descEn": "FALSE → exit"
+      "descEn": "FALSE → exit",
+      "actionEn": "5 < 5"
     },
     {
       "line": 15,
