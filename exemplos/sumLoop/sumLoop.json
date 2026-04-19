@@ -18,149 +18,298 @@
       "line": 0,
       "action": "int soma = 0;",
       "desc": "Declara variável 'soma' e inicializa com 0 na memória RAM",
-      "vars": { "soma": 0 }
+      "vars": {
+        "soma": 0
+      },
+      "descEn": "Declare variable 'soma' and initialize to 0 in RAM"
     },
     {
       "line": 1,
       "action": "int vezes = 3;",
       "desc": "Declara variável 'vezes' e inicializa com 3 (limite do loop)",
-      "vars": { "vezes": 3, "soma": 0 }
+      "vars": {
+        "vezes": 3,
+        "soma": 0
+      },
+      "descEn": "Declare variable 'vezes' and initialize to 3 (loop limit)"
     },
     {
       "line": 3,
       "action": "Preparando para entrar no loop FOR",
       "desc": "O processador avalia a condição de início do loop",
-      "vars": { "vezes": 3, "soma": 0, "i": null }
+      "vars": {
+        "vezes": 3,
+        "soma": 0,
+        "i": null
+      },
+      "actionEn": "Preparing to enter FOR loop",
+      "descEn": "The processor evaluates the loop start condition"
     },
     {
       "line": 4,
       "action": "i = 1 (inicialização do FOR)",
       "desc": "PC aponta para linha 4. Variável i recebe valor 1",
-      "vars": { "vezes": 3, "soma": 0, "i": 1 }
+      "vars": {
+        "vezes": 3,
+        "soma": 0,
+        "i": 1
+      },
+      "actionEn": "i = 1 (FOR initialization)",
+      "descEn": "PC points to line 4. Variable i receives value 1"
     },
     {
       "line": 4,
       "action": "Teste i <= vezes? (1 <= 3)",
       "desc": "Comparação: i(1) é menor ou igual a vezes(3)? VERDADEIRO → entra no loop",
-      "vars": { "vezes": 3, "soma": 0, "i": 1 }
+      "vars": {
+        "vezes": 3,
+        "soma": 0,
+        "i": 1
+      },
+      "actionEn": "Test i <= vezes? (1 <= 3)",
+      "descEn": "Comparison: i(1) is less than or equal to vezes(3)? TRUE → enters the loop"
     },
     {
       "line": 5,
       "action": "printf(\"Volta 1\\n\")",
       "desc": "Chamada de sistema - exibe no console 'Volta 1'",
-      "vars": { "vezes": 3, "soma": 0, "i": 1 },
-      "output": "Volta 1"
+      "vars": {
+        "vezes": 3,
+        "soma": 0,
+        "i": 1
+      },
+      "output": "Volta 1",
+      "descEn": "System call - displays 'Volta 1' in the console",
+      "outputEn": "Round 1"
     },
     {
       "line": 6,
       "action": "soma = soma + i (soma = 0 + 1)",
       "desc": "ALU soma valores. Resultado 1 armazenado em 'soma'",
-      "vars": { "vezes": 3, "soma": 1, "i": 1 }
+      "vars": {
+        "vezes": 3,
+        "soma": 1,
+        "i": 1
+      },
+      "descEn": "ALU adds values. Result 1 stored in 'soma'"
     },
     {
       "line": 7,
       "action": "Fim do corpo do loop, volta para o FOR",
       "desc": "Processador encontra '}' e volta para linha 4",
-      "vars": { "vezes": 3, "soma": 1, "i": 1 }
+      "vars": {
+        "vezes": 3,
+        "soma": 1,
+        "i": 1
+      },
+      "actionEn": "End of loop body, return to FOR",
+      "descEn": "Processor finds '}' and returns to line 4"
     },
     {
       "line": 4,
       "action": "i++ (incremento)",
       "desc": "i = i + 1 → i agora é 2",
-      "vars": { "vezes": 3, "soma": 1, "i": 2 }
+      "vars": {
+        "vezes": 3,
+        "soma": 1,
+        "i": 2
+      },
+      "actionEn": "i++ (increment)",
+      "descEn": "i = i + 1 → i is now 2"
     },
     {
       "line": 4,
       "action": "Teste i <= vezes? (2 <= 3)",
       "desc": "Comparação: VERDADEIRO → executa loop novamente",
-      "vars": { "vezes": 3, "soma": 1, "i": 2 }
+      "vars": {
+        "vezes": 3,
+        "soma": 1,
+        "i": 2
+      },
+      "actionEn": "Test i <= vezes? (2 <= 3)",
+      "descEn": "Comparison: TRUE → execute loop again"
     },
     {
       "line": 5,
       "action": "printf(\"Volta 2\\n\")",
       "desc": "Exibe 'Volta 2' no console",
-      "vars": { "vezes": 3, "soma": 1, "i": 2 },
-      "output": "Volta 2"
+      "vars": {
+        "vezes": 3,
+        "soma": 1,
+        "i": 2
+      },
+      "output": "Volta 2",
+      "descEn": "Displays 'Volta 2' in the console",
+      "outputEn": "Round 2"
     },
     {
       "line": 6,
       "action": "soma = soma + i (soma = 1 + 2)",
       "desc": "ALU: 1 + 2 = 3. 'soma' agora vale 3",
-      "vars": { "vezes": 3, "soma": 3, "i": 2 }
+      "vars": {
+        "vezes": 3,
+        "soma": 3,
+        "i": 2
+      },
+      "descEn": "ALU: 1 + 2 = 3. 'soma' now equals 3"
     },
     {
       "line": 7,
       "action": "Volta para o FOR",
       "desc": "Fim do corpo, retorna para linha 4",
-      "vars": { "vezes": 3, "soma": 3, "i": 2 }
+      "vars": {
+        "vezes": 3,
+        "soma": 3,
+        "i": 2
+      },
+      "actionEn": "Return to FOR",
+      "descEn": "End of loop body, return to line 4"
     },
     {
       "line": 4,
       "action": "i++ (incremento)",
       "desc": "i = 2 + 1 → i agora é 3",
-      "vars": { "vezes": 3, "soma": 3, "i": 3 }
+      "vars": {
+        "vezes": 3,
+        "soma": 3,
+        "i": 3
+      },
+      "actionEn": "i++ (increment)",
+      "descEn": "i = 2 + 1 → i is now 3"
     },
     {
       "line": 4,
       "action": "Teste i <= vezes? (3 <= 3)",
       "desc": "Comparação: VERDADEIRO → executa mais uma vez",
-      "vars": { "vezes": 3, "soma": 3, "i": 3 }
+      "vars": {
+        "vezes": 3,
+        "soma": 3,
+        "i": 3
+      },
+      "actionEn": "Test i <= vezes? (3 <= 3)",
+      "descEn": "Comparison: TRUE → execute one more time"
     },
     {
       "line": 5,
       "action": "printf(\"Volta 3\\n\")",
       "desc": "Exibe 'Volta 3' no console",
-      "vars": { "vezes": 3, "soma": 3, "i": 3 },
-      "output": "Volta 3"
+      "vars": {
+        "vezes": 3,
+        "soma": 3,
+        "i": 3
+      },
+      "output": "Volta 3",
+      "descEn": "Displays 'Volta 3' in the console",
+      "outputEn": "Round 3"
     },
     {
       "line": 6,
       "action": "soma = soma + i (soma = 3 + 3)",
       "desc": "ALU: 3 + 3 = 6. 'soma' agora vale 6",
-      "vars": { "vezes": 3, "soma": 6, "i": 3 }
+      "vars": {
+        "vezes": 3,
+        "soma": 6,
+        "i": 3
+      },
+      "descEn": "ALU: 3 + 3 = 6. 'soma' now equals 6"
     },
     {
       "line": 7,
       "action": "Volta para o FOR",
       "desc": "Fim do corpo, retorna para linha 4",
-      "vars": { "vezes": 3, "soma": 6, "i": 3 }
+      "vars": {
+        "vezes": 3,
+        "soma": 6,
+        "i": 3
+      },
+      "actionEn": "Return to FOR",
+      "descEn": "End of loop body, return to line 4"
     },
     {
       "line": 4,
       "action": "i++ (incremento)",
       "desc": "i = 3 + 1 → i agora é 4",
-      "vars": { "vezes": 3, "soma": 6, "i": 4 }
+      "vars": {
+        "vezes": 3,
+        "soma": 6,
+        "i": 4
+      },
+      "actionEn": "i++ (increment)",
+      "descEn": "i = 3 + 1 → i is now 4"
     },
     {
       "line": 4,
       "action": "Teste i <= vezes? (4 <= 3)",
       "desc": "Comparação: FALSO → Sai do loop",
-      "vars": { "vezes": 3, "soma": 6, "i": 4 }
+      "vars": {
+        "vezes": 3,
+        "soma": 6,
+        "i": 4
+      },
+      "actionEn": "Test i <= vezes? (4 <= 3)",
+      "descEn": "Comparison: FALSE → exit loop"
     },
     {
       "line": 8,
       "action": "Pula linha em branco",
       "desc": "Processador avança",
-      "vars": { "vezes": 3, "soma": 6, "i": 4 }
+      "vars": {
+        "vezes": 3,
+        "soma": 6,
+        "i": 4
+      },
+      "actionEn": "Skip blank line",
+      "descEn": "Processor advances"
     },
     {
       "line": 9,
       "action": "printf(\"Soma total: 6\\n\")",
       "desc": "Exibe resultado final",
-      "vars": { "vezes": 3, "soma": 6, "i": 4 },
-      "output": "Soma total: 6"
+      "vars": {
+        "vezes": 3,
+        "soma": 6,
+        "i": 4
+      },
+      "output": "Soma total: 6",
+      "descEn": "Displays final result"
     },
     {
       "line": 11,
       "action": "return soma (return 6)",
       "desc": "Função retorna valor 6 para quem chamou",
-      "vars": { "vezes": 3, "soma": 6, "i": 4, "resultado": 6 }
+      "vars": {
+        "vezes": 3,
+        "soma": 6,
+        "i": 4,
+        "resultado": 6
+      },
+      "descEn": "Function returns value 6 to caller"
     },
     {
       "line": 11,
       "action": "FIM DA EXECUÇÃO",
       "desc": "Processador termina. Programa finalizado!",
-      "vars": { "vezes": 3, "soma": 6, "i": 4, "resultado": 6 }
+      "vars": {
+        "vezes": 3,
+        "soma": 6,
+        "i": 4,
+        "resultado": 6
+      },
+      "actionEn": "END OF EXECUTION",
+      "descEn": "Processor ends. Program finished!"
     }
+  ],
+  "codeLinesEn": [
+    "1   int soma = 0;",
+    "2   int vezes = 3;",
+    "3   ",
+    "4   for(int i = 1; i <= vezes; i++) {",
+    "5       printf(\"Round %d\\n\", i);",
+    "6       soma = soma + i;",
+    "7   }",
+    "8   ",
+    "9   printf(\"Total sum: %d\\n\", soma);",
+    "10  ",
+    "11  return soma;"
   ]
 }
