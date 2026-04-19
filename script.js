@@ -4,6 +4,53 @@ class Simulator {
     this.currentStep = -1;
     this.history = [];
     this.outputs = [];
+    this.examplesPaths = {
+      sumLoop: "exemplos/sumLoop/sumLoop.json",
+      factorial: "exemplos/factorial/factorial.json",
+      fibonacci: "exemplos/fibonacci/fibonacci.json",
+      maxArray: "exemplos/maxArray/maxArray.json",
+    };
+    this.currentLang = "pt";
+    this.langs = {
+      pt: {
+        title: "🔍 Simulador de Execução do Processador",
+        subtitle:
+          "Clique em NEXT para executar cada instrução - Veja o processador em ação!",
+        chooseExample: "Escolha um exemplo:",
+        codeSource: "📝 Código Fonte",
+        memoryVars: "📊 Variáveis na Memória",
+        processorState: "⚙️ Estado do Processador",
+        instruction: "📌 Instrução:",
+        processorAction: "💡 O que o processador faz:",
+        programCounter: "PC (Program Counter)",
+        ready: "⏸ PRONTO",
+        running: "▶ EXECUTANDO",
+        finished: "✅ FINALIZADO",
+        back: "◀ VOLTAR",
+        reset: "🔄 RESET",
+        next: "NEXT ▶",
+        programReady: "▶ Programa pronto para execução",
+      },
+      en: {
+        title: "🔍 Processor Execution Simulator",
+        subtitle:
+          "Click NEXT to execute each instruction - See the processor in action!",
+        chooseExample: "Choose an example:",
+        codeSource: "📝 Source Code",
+        memoryVars: "📊 Variables in Memory",
+        processorState: "⚙️ Processor State",
+        instruction: "📌 Instruction:",
+        processorAction: "💡 What the processor does:",
+        programCounter: "PC (Program Counter)",
+        ready: "⏸ READY",
+        running: "▶ RUNNING",
+        finished: "✅ FINISHED",
+        back: "◀ BACK",
+        reset: "🔄 RESET",
+        next: "NEXT ▶",
+        programReady: "▶ Program ready for execution",
+      },
+    };
     this.init();
   }
 
@@ -11,15 +58,22 @@ class Simulator {
     this.loadExample(this.currentExample);
     this.setupEventListeners();
     this.setupKeyboardShortcuts();
+    this.updateLanguage();
   }
 
-  loadExample(exampleKey) {
+  async loadExample(exampleKey) {
     this.currentExample = exampleKey;
-    const example = examples[exampleKey];
-    this.codeLines = example.codeLines;
-    this.steps = example.steps;
-    this.resetSimulation();
-    this.renderCode();
+    const path = this.examplesPaths[exampleKey];
+    try {
+      const response = await fetch(path);
+      const example = await response.json();
+      this.codeLines = example.codeLines;
+      this.steps = example.steps;
+      this.resetSimulation();
+      this.renderCode();
+    } catch (error) {
+      console.error("Erro ao carregar exemplo:", error);
+    }
   }
 
   renderCode() {
@@ -35,6 +89,12 @@ class Simulator {
     });
   }
 
+  toggleLanguage() {
+    this.currentLang = this.currentLang === "pt" ? "en" : "pt";
+    this.updateLanguage();
+    this.resetSimulation();
+  }
+
   updateCodeHighlight() {
     // Limpa todos os destaques
     document.querySelectorAll(".line").forEach((line) => {
@@ -45,13 +105,18 @@ class Simulator {
     for (let i = 0; i <= this.currentStep; i++) {
       const stepLine = this.steps[i].line;
       const lineElem = document.getElementById(`line-${stepLine}`);
-      if (lineElem && i < this.currentStep) {
-        lineElem.classList.add("executed");
+      if (lineElem) {
+        if (
+          i < this.currentStep ||
+          this.currentStep === this.steps.length - 1
+        ) {
+          lineElem.classList.add("executed");
+        }
       }
     }
 
-    // Marca linha atual
-    if (this.currentStep >= 0 && this.currentStep < this.steps.length) {
+    // Marca linha atual apenas se não for o último step
+    if (this.currentStep >= 0 && this.currentStep < this.steps.length - 1) {
       const currentLine = this.steps[this.currentStep].line;
       const currentElem = document.getElementById(`line-${currentLine}`);
       if (currentElem) {
@@ -101,13 +166,13 @@ class Simulator {
 
       // Atualiza descrição
       document.getElementById("stepInfo").innerHTML = `
-                <strong>📌 Instrução:</strong> ${step.action}<br>
-                <strong>💡 O que o processador faz:</strong> ${step.desc}
+                <strong>${this.langs[this.currentLang].instruction}</strong> ${step.action}<br>
+                <strong>${this.langs[this.currentLang].processorAction}</strong> ${step.desc}
             `;
 
       // Atualiza PC
       document.getElementById("pcInfo").innerHTML =
-        `PC (Program Counter): ${this.currentStep + 1} / ${this.steps.length} | Linha: ${step.line + 1}`;
+        `${this.langs[this.currentLang].programCounter}: ${this.currentStep + 1} / ${this.steps.length} | Linha: ${step.line + 1}`;
 
       // Atualiza variáveis
       this.updateVariables(step.vars);
@@ -121,11 +186,11 @@ class Simulator {
       const statusElem = document.getElementById("status");
       if (this.currentStep === this.steps.length - 1) {
         statusElem.className = "status finished";
-        statusElem.innerHTML = "✅ FINALIZADO";
+        statusElem.innerHTML = this.langs[this.currentLang].finished;
         document.getElementById("nextBtn").disabled = true;
       } else {
         statusElem.className = "status running";
-        statusElem.innerHTML = "▶ EXECUTANDO";
+        statusElem.innerHTML = this.langs[this.currentLang].running;
         document.getElementById("nextBtn").disabled = false;
       }
 
@@ -170,17 +235,18 @@ class Simulator {
 
     // Limpa output
     const outputArea = document.getElementById("outputArea");
-    outputArea.innerHTML =
-      '<div class="output-line">▶ Programa pronto para execução</div>';
+    outputArea.innerHTML = `<div class="output-line">${this.langs[this.currentLang].programReady}</div>`;
 
     // Reseta variáveis
     this.updateVariables({});
 
     // Reseta UI
     document.getElementById("stepInfo").innerHTML = "Aguardando início...";
-    document.getElementById("pcInfo").innerHTML = "PC (Program Counter): 0";
+    document.getElementById("pcInfo").innerHTML =
+      `${this.langs[this.currentLang].programCounter}: 0`;
     document.getElementById("status").className = "status waiting";
-    document.getElementById("status").innerHTML = "⏸ PRONTO";
+    document.getElementById("status").innerHTML =
+      this.langs[this.currentLang].ready;
     document.getElementById("nextBtn").disabled = false;
     document.getElementById("prevBtn").disabled = true;
 
@@ -203,6 +269,9 @@ class Simulator {
     document
       .getElementById("exampleSelect")
       .addEventListener("change", (e) => this.loadExample(e.target.value));
+    document
+      .getElementById("langBtn")
+      .addEventListener("click", () => this.toggleLanguage());
   }
 
   setupKeyboardShortcuts() {

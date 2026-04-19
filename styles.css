@@ -17,11 +17,25 @@ body {
     margin: 0 auto;
 }
 
-h1 {
-    text-align: center;
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     margin-bottom: 20px;
-    font-size: 1.8rem;
-    color: #00d9ff;
+}
+
+#langBtn {
+    padding: 8px 16px;
+    background: #0d1117;
+    color: #eee;
+    border: 1px solid #333;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+#langBtn:hover {
+    background: #161b22;
 }
 
 .subtitle {
@@ -71,7 +85,7 @@ h1 {
     border-radius: 8px;
     padding: 15px;
     overflow: auto;
-    max-height: 400px;
+    max-height: 300px;
 }
 
 pre {
