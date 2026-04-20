@@ -1,0 +1,96 @@
+{
+  "name": "If / Else",
+  "codeLines": [
+    "1   int x = 8;",
+    "2   int category = 0;",
+    "3   ",
+    "4   if (x < 10) {",
+    "5       category = 1;",
+    "6   } else {",
+    "7       category = 2;",
+    "8   }",
+    "9   ",
+    "10  printf(\"Categoria: %d\\n\", category);",
+    "11  return category;"
+  ],
+  "codeLinesEn": [
+    "1   int x = 8;",
+    "2   int category = 0;",
+    "3   ",
+    "4   if (x < 10) {",
+    "5       category = 1;",
+    "6   } else {",
+    "7       category = 2;",
+    "8   }",
+    "9   ",
+    "10  printf(\"Category: %d\\n\", category);",
+    "11  return category;"
+  ],
+  "variableKeys": ["x", "category"],
+  "steps": [
+    {
+      "line": 0,
+      "action": "int x = 8;",
+      "desc": "Declara variável 'x' e inicializa com 8",
+      "vars": {
+        "x": 8
+      },
+      "descEn": "Declare variable 'x' and initialize it to 8"
+    },
+    {
+      "line": 1,
+      "action": "int category = 0;",
+      "desc": "Declara variável 'category' e inicializa com 0",
+      "vars": {
+        "x": 8,
+        "category": 0
+      },
+      "descEn": "Declare variable 'category' and initialize it to 0"
+    },
+    {
+      "line": 4,
+      "action": "Teste x < 10? (8 < 10)",
+      "desc": "Avalia a condição do if",
+      "vars": {
+        "x": 8,
+        "category": 0
+      },
+      "actionEn": "Test x < 10? (8 < 10)",
+      "descEn": "Evaluate the if condition"
+    },
+    {
+      "line": 5,
+      "action": "category = 1;",
+      "desc": "Caminho verdadeiro: 'category' recebe 1",
+      "vars": {
+        "x": 8,
+        "category": 1
+      },
+      "actionEn": "category = 1;",
+      "descEn": "True path: set category to 1"
+    },
+    {
+      "line": 10,
+      "action": "printf(\"Categoria: %d\\n\", category)",
+      "desc": "Exibe o resultado da decisão",
+      "vars": {
+        "x": 8,
+        "category": 1
+      },
+      "output": "Categoria: 1",
+      "actionEn": "printf(\"Category: %d\\n\", category)",
+      "descEn": "Print the decision result",
+      "outputEn": "Category: 1"
+    },
+    {
+      "line": 11,
+      "action": "return category;",
+      "desc": "Retorna o valor escolhido para a função",
+      "vars": {
+        "x": 8,
+        "category": 1
+      },
+      "descEn": "Return the chosen value from the function"
+    }
+  ]
+}

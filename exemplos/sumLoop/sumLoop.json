@@ -13,6 +13,20 @@
     "10  ",
     "11  return soma;"
   ],
+  "codeLinesEn": [
+    "1   int sum = 0;",
+    "2   int times = 3;",
+    "3   ",
+    "4   for(int i = 1; i <= times; i++) {",
+    "5       printf(\"Round %d\\n\", i);",
+    "6       sum = sum + i;",
+    "7   }",
+    "8   ",
+    "9   printf(\"Total sum: %d\\n\", sum);",
+    "10  ",
+    "11  return sum;"
+  ],
+  "variableKeys": ["soma", "vezes", "i"],
   "steps": [
     {
       "line": 0,

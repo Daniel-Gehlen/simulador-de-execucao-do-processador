@@ -1,0 +1,130 @@
+{
+  "name": "Funções",
+  "codeLines": [
+    "1   int sum(int a, int b) {",
+    "2       int result = a + b;",
+    "3       return result;",
+    "4   }",
+    "5   ",
+    "6   int x = 4;",
+    "7   int y = 7;",
+    "8   int total = sum(x, y);",
+    "9   ",
+    "10  printf(\"Sum: %d\\n\", total);",
+    "11  return total;"
+  ],
+  "codeLinesEn": [
+    "1   int sum(int a, int b) {",
+    "2       int result = a + b;",
+    "3       return result;",
+    "4   }",
+    "5   ",
+    "6   int x = 4;",
+    "7   int y = 7;",
+    "8   int total = sum(x, y);",
+    "9   ",
+    "10  printf(\"Sum: %d\\n\", total);",
+    "11  return total;"
+  ],
+  "variableKeys": ["a", "b", "result", "x", "y", "total"],
+  "steps": [
+    {
+      "line": 0,
+      "action": "int sum(int a, int b)",
+      "desc": "Declara a função que soma dois valores",
+      "vars": {
+        "x": 4,
+        "y": 7,
+        "total": null
+      },
+      "descEn": "Declare the function that adds two values"
+    },
+    {
+      "line": 6,
+      "action": "int x = 4;",
+      "desc": "Define o primeiro valor",
+      "vars": {
+        "x": 4,
+        "y": 7,
+        "total": null
+      },
+      "descEn": "Set the first value"
+    },
+    {
+      "line": 7,
+      "action": "int y = 7;",
+      "desc": "Define o segundo valor",
+      "vars": {
+        "x": 4,
+        "y": 7,
+        "total": null
+      },
+      "descEn": "Set the second value"
+    },
+    {
+      "line": 8,
+      "action": "total = sum(x, y);",
+      "desc": "Chama a função sum com x e y",
+      "vars": {
+        "x": 4,
+        "y": 7,
+        "total": null
+      },
+      "descEn": "Call the sum function with x and y"
+    },
+    {
+      "line": 1,
+      "action": "int result = a + b;",
+      "desc": "Dentro da função: soma os parâmetros",
+      "vars": {
+        "a": 4,
+        "b": 7,
+        "result": 11,
+        "x": 4,
+        "y": 7,
+        "total": null
+      },
+      "actionEn": "int result = a + b;",
+      "descEn": "Inside the function: add the parameters"
+    },
+    {
+      "line": 3,
+      "action": "return result;",
+      "desc": "Retorna o valor calculado para o chamador",
+      "vars": {
+        "a": 4,
+        "b": 7,
+        "result": 11,
+        "x": 4,
+        "y": 7,
+        "total": 11
+      },
+      "descEn": "Return the computed value to the caller"
+    },
+    {
+      "line": 10,
+      "action": "printf(\"Sum: %d\\n\", total)",
+      "desc": "Exibe o resultado da função",
+      "vars": {
+        "x": 4,
+        "y": 7,
+        "total": 11
+      },
+      "output": "Sum: 11",
+      "actionEn": "printf(\"Sum: %d\\n\", total)",
+      "descEn": "Print the function result",
+      "outputEn": "Sum: 11"
+    },
+    {
+      "line": 11,
+      "action": "return total;",
+      "desc": "Retorna o valor final do programa",
+      "vars": {
+        "x": 4,
+        "y": 7,
+        "total": 11
+      },
+      "descEn": "Return the final program value"
+    }
+  ]
+}

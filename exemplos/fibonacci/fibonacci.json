@@ -17,6 +17,24 @@
     "14  ",
     "15  return b;"
   ],
+  "codeLinesEn": [
+    "1   int n = 5;",
+    "2   int a = 0, b = 1;",
+    "3   ",
+    "4   printf(\"Fibonacci sequence:\\n\");",
+    "5   printf(\"%d\\n\", a);",
+    "6   printf(\"%d\\n\", b);",
+    "7   ",
+    "8   for(int i = 2; i < n; i++) {",
+    "9       int temp = a + b;",
+    "10      printf(\"%d\\n\", temp);",
+    "11      a = b;",
+    "12      b = temp;",
+    "13  }",
+    "14  ",
+    "15  return b;"
+  ],
+  "variableKeys": ["n", "a", "b", "temp", "i"],
   "steps": [
     {
       "line": 0,

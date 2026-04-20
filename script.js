@@ -4,11 +4,23 @@ class Simulator {
     this.currentStep = -1;
     this.history = [];
     this.outputs = [];
+    this.variableKeys = [];
     this.examplesPaths = {
       sumLoop: "exemplos/sumLoop/sumLoop.json",
       factorial: "exemplos/factorial/factorial.json",
       fibonacci: "exemplos/fibonacci/fibonacci.json",
       maxArray: "exemplos/maxArray/maxArray.json",
+      ifElse: "exemplos/ifElse/ifElse.json",
+      whileLoop: "exemplos/whileLoop/whileLoop.json",
+      doWhileLoop: "exemplos/doWhileLoop/doWhileLoop.json",
+      switchCase: "exemplos/switchCase/switchCase.json",
+      functions: "exemplos/functions/functions.json",
+      recursion: "exemplos/recursion/recursion.json",
+      pointers: "exemplos/pointers/pointers.json",
+      stringArray: "exemplos/stringArray/stringArray.json",
+      scanfInput: "exemplos/scanfInput/scanfInput.json",
+      structExample: "exemplos/structExample/structExample.json",
+      breakContinue: "exemplos/breakContinue/breakContinue.json",
     };
     this.currentLang = "pt";
     this.langs = {
@@ -38,19 +50,40 @@ class Simulator {
           vezes: "vezes (limite)",
           soma: "soma (acumulador)",
           x: "x (entrada)",
+          y: "y (entrada)",
           resultado: "resultado (retorno)",
           n: "n (parâmetro)",
-          a: "a (fibonacci)",
-          b: "b (fibonacci)",
+          a: "a (parâmetro)",
+          b: "b (parâmetro)",
           temp: "temp (temporário)",
           max: "max (máximo)",
           arr: "arr (array)",
+          category: "categoria",
+          count: "count (contador)",
+          option: "opção",
+          result: "resultado",
+          total: "total",
+          value: "valor",
+          ptr: "ptr (ponteiro)",
+          str: "str",
+          p: "p (struct)",
         },
         examples: {
           sumLoop: "Loop de Soma",
           factorial: "Fatorial",
           fibonacci: "Fibonacci",
           maxArray: "Máximo em Array",
+          ifElse: "If / Else",
+          whileLoop: "While",
+          doWhileLoop: "Do / While",
+          switchCase: "Switch",
+          functions: "Funções",
+          recursion: "Recursão",
+          pointers: "Ponteiros",
+          stringArray: "String / Char Array",
+          scanfInput: "Entrada com scanf",
+          structExample: "Struct",
+          breakContinue: "Break / Continue",
         },
       },
       en: {
@@ -79,19 +112,40 @@ class Simulator {
           vezes: "times (limit)",
           soma: "sum (accumulator)",
           x: "x (input)",
+          y: "y (input)",
           resultado: "result (return)",
           n: "n (parameter)",
-          a: "a (fibonacci)",
-          b: "b (fibonacci)",
+          a: "a (parameter)",
+          b: "b (parameter)",
           temp: "temp (temporary)",
           max: "max (maximum)",
           arr: "arr (array)",
+          category: "category",
+          count: "count (counter)",
+          option: "option",
+          result: "result",
+          total: "total",
+          value: "value",
+          ptr: "ptr (pointer)",
+          str: "str",
+          p: "person (struct)",
         },
         examples: {
           sumLoop: "Sum Loop",
           factorial: "Factorial",
           fibonacci: "Fibonacci",
           maxArray: "Maximum in Array",
+          ifElse: "If / Else",
+          whileLoop: "While",
+          doWhileLoop: "Do / While",
+          switchCase: "Switch",
+          functions: "Functions",
+          recursion: "Recursion",
+          pointers: "Pointers",
+          stringArray: "String / Char Array",
+          scanfInput: "scanf Input",
+          structExample: "Struct",
+          breakContinue: "Break / Continue",
         },
       },
     };
@@ -115,17 +169,11 @@ class Simulator {
       this.codeLines = example.codeLines;
       this.codeLinesEn = example.codeLinesEn || null;
       this.steps = example.steps;
+      this.variableKeys =
+        example.variableKeys || this.extractVariableKeys(example);
       this.resetSimulation();
       this.renderCode();
-      // Atualiza labels das variáveis para o idioma atual
-      const lang = this.langs[this.currentLang];
-      const vars = lang.variableLabels || {};
-      Object.entries(vars).forEach(([key, labelText]) => {
-        const labelElem = document.getElementById(`label_var_${key}`);
-        if (labelElem) {
-          labelElem.textContent = labelText;
-        }
-      });
+      this.renderVariableTable();
     } catch (error) {
       console.error("Error loading example:", error);
     }
@@ -147,6 +195,35 @@ class Simulator {
       span.textContent = line;
       container.appendChild(span);
     });
+  }
+
+  renderVariableTable() {
+    const tbody = document.getElementById("varTableBody");
+    if (!tbody) return;
+    tbody.innerHTML = "";
+    const labels = this.langs[this.currentLang].variableLabels || {};
+    this.variableKeys.forEach((key) => {
+      const row = document.createElement("tr");
+      const labelCell = document.createElement("td");
+      labelCell.id = `label_var_${key}`;
+      labelCell.textContent = labels[key] || key;
+      const valueCell = document.createElement("td");
+      valueCell.id = `var_${key}`;
+      valueCell.textContent = "-";
+      row.appendChild(labelCell);
+      row.appendChild(valueCell);
+      tbody.appendChild(row);
+    });
+  }
+
+  extractVariableKeys(example) {
+    const keys = new Set();
+    (example.steps || []).forEach((step) => {
+      if (step.vars) {
+        Object.keys(step.vars).forEach((key) => keys.add(key));
+      }
+    });
+    return Array.from(keys);
   }
 
   toggleLanguage() {
@@ -222,22 +299,18 @@ class Simulator {
   }
 
   updateVariables(stepVars) {
-    // Clear all variables first
-    document.getElementById("var_i").textContent = "-";
-    document.getElementById("var_vezes").textContent = "-";
-    document.getElementById("var_soma").textContent = "-";
-    document.getElementById("var_x").textContent = "-";
-    document.getElementById("var_resultado").textContent = "-";
-    document.getElementById("var_n").textContent = "-";
-    document.getElementById("var_a").textContent = "-";
-    document.getElementById("var_b").textContent = "-";
-    document.getElementById("var_temp").textContent = "-";
+    // Clear all variable value cells first.
+    document.querySelectorAll("td[id^='var_']").forEach((elem) => {
+      if (!elem.id.startsWith("label_var_")) {
+        elem.textContent = "-";
+      }
+    });
 
     // Update with current values
     for (const [key, value] of Object.entries(stepVars)) {
       const elem = document.getElementById(`var_${key}`);
       if (elem) {
-        elem.textContent = value !== undefined ? value : "-";
+        elem.textContent = value !== undefined && value !== null ? value : "-";
       }
     }
   }
