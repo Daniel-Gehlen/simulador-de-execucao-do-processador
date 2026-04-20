@@ -1,0 +1,279 @@
+{
+  "name": "While Loop",
+  "codeLines": [
+    "1   int total = 0;",
+    "2   int i = 1;",
+    "3   int n = 5;",
+    "4   ",
+    "5   while (i <= n) {",
+    "6       total = total + i;",
+    "7       i++;",
+    "8   }",
+    "9   ",
+    "10  printf(\"Total: %d\\n\", total);",
+    "11  return total;"
+  ],
+  "codeLinesEn": [
+    "1   int total = 0;",
+    "2   int i = 1;",
+    "3   int n = 5;",
+    "4   ",
+    "5   while (i <= n) {",
+    "6       total = total + i;",
+    "7       i++;",
+    "8   }",
+    "9   ",
+    "10  printf(\"Total: %d\\n\", total);",
+    "11  return total;"
+  ],
+  "variableKeys": ["total", "i", "n"],
+  "steps": [
+    {
+      "line": 0,
+      "action": "int total = 0;",
+      "desc": "Inicializa acumulador total",
+      "vars": {
+        "total": 0
+      },
+      "descEn": "Initialize total accumulator"
+    },
+    {
+      "line": 1,
+      "action": "int i = 1;",
+      "desc": "Inicializa contador i",
+      "vars": {
+        "total": 0,
+        "i": 1
+      },
+      "descEn": "Initialize counter i"
+    },
+    {
+      "line": 2,
+      "action": "int n = 5;",
+      "desc": "Define limite n",
+      "vars": {
+        "total": 0,
+        "i": 1,
+        "n": 5
+      },
+      "descEn": "Define limit n"
+    },
+    {
+      "line": 5,
+      "action": "Teste i <= n? (1 <= 5)",
+      "desc": "Verifica a condição antes de executar o corpo",
+      "vars": {
+        "total": 0,
+        "i": 1,
+        "n": 5
+      },
+      "actionEn": "Test i <= n? (1 <= 5)",
+      "descEn": "Check the condition before executing the body"
+    },
+    {
+      "line": 6,
+      "action": "total = total + i (0 + 1)",
+      "desc": "Soma o valor do contador em total",
+      "vars": {
+        "total": 1,
+        "i": 1,
+        "n": 5
+      },
+      "actionEn": "total = total + i (0 + 1)",
+      "descEn": "Add the counter to total"
+    },
+    {
+      "line": 7,
+      "action": "i++",
+      "desc": "Incrementa o contador",
+      "vars": {
+        "total": 1,
+        "i": 2,
+        "n": 5
+      },
+      "actionEn": "i++",
+      "descEn": "Increment the counter"
+    },
+    {
+      "line": 5,
+      "action": "Teste i <= n? (2 <= 5)",
+      "desc": "Reavalia a condição antes de continuar",
+      "vars": {
+        "total": 1,
+        "i": 2,
+        "n": 5
+      },
+      "actionEn": "Test i <= n? (2 <= 5)",
+      "descEn": "Re-evaluate the condition before continuing"
+    },
+    {
+      "line": 6,
+      "action": "total = total + i (1 + 2)",
+      "desc": "Atualiza total",
+      "vars": {
+        "total": 3,
+        "i": 2,
+        "n": 5
+      },
+      "actionEn": "total = total + i (1 + 2)",
+      "descEn": "Update total"
+    },
+    {
+      "line": 7,
+      "action": "i++",
+      "desc": "Incrementa i para 3",
+      "vars": {
+        "total": 3,
+        "i": 3,
+        "n": 5
+      },
+      "actionEn": "i++",
+      "descEn": "Increment i to 3"
+    },
+    {
+      "line": 5,
+      "action": "Teste i <= n? (3 <= 5)",
+      "desc": "Condição verdadeira de novo",
+      "vars": {
+        "total": 3,
+        "i": 3,
+        "n": 5
+      },
+      "actionEn": "Test i <= n? (3 <= 5)",
+      "descEn": "Condition is true again"
+    },
+    {
+      "line": 6,
+      "action": "total = total + i (3 + 3)",
+      "desc": "Soma mais um termo",
+      "vars": {
+        "total": 6,
+        "i": 3,
+        "n": 5
+      },
+      "actionEn": "total = total + i (3 + 3)",
+      "descEn": "Add one more term"
+    },
+    {
+      "line": 7,
+      "action": "i++",
+      "desc": "Incrementa i para 4",
+      "vars": {
+        "total": 6,
+        "i": 4,
+        "n": 5
+      },
+      "actionEn": "i++",
+      "descEn": "Increment i to 4"
+    },
+    {
+      "line": 5,
+      "action": "Teste i <= n? (4 <= 5)",
+      "desc": "Ainda verdadeiro",
+      "vars": {
+        "total": 6,
+        "i": 4,
+        "n": 5
+      },
+      "actionEn": "Test i <= n? (4 <= 5)",
+      "descEn": "Still true"
+    },
+    {
+      "line": 6,
+      "action": "total = total + i (6 + 4)",
+      "desc": "Adiciona 4",
+      "vars": {
+        "total": 10,
+        "i": 4,
+        "n": 5
+      },
+      "actionEn": "total = total + i (6 + 4)",
+      "descEn": "Add 4"
+    },
+    {
+      "line": 7,
+      "action": "i++",
+      "desc": "Incrementa i para 5",
+      "vars": {
+        "total": 10,
+        "i": 5,
+        "n": 5
+      },
+      "actionEn": "i++",
+      "descEn": "Increment i to 5"
+    },
+    {
+      "line": 5,
+      "action": "Teste i <= n? (5 <= 5)",
+      "desc": "Última vez verdadeiro",
+      "vars": {
+        "total": 10,
+        "i": 5,
+        "n": 5
+      },
+      "actionEn": "Test i <= n? (5 <= 5)",
+      "descEn": "Last time true"
+    },
+    {
+      "line": 6,
+      "action": "total = total + i (10 + 5)",
+      "desc": "Soma o último valor",
+      "vars": {
+        "total": 15,
+        "i": 5,
+        "n": 5
+      },
+      "actionEn": "total = total + i (10 + 5)",
+      "descEn": "Add the last value"
+    },
+    {
+      "line": 7,
+      "action": "i++",
+      "desc": "Incrementa i para 6",
+      "vars": {
+        "total": 15,
+        "i": 6,
+        "n": 5
+      },
+      "actionEn": "i++",
+      "descEn": "Increment i to 6"
+    },
+    {
+      "line": 5,
+      "action": "Teste i <= n? (6 <= 5)",
+      "desc": "Falso → sai do loop",
+      "vars": {
+        "total": 15,
+        "i": 6,
+        "n": 5
+      },
+      "actionEn": "Test i <= n? (6 <= 5)",
+      "descEn": "False → exit the loop"
+    },
+    {
+      "line": 10,
+      "action": "printf(\"Total: %d\\n\", total)",
+      "desc": "Exibe o total final",
+      "vars": {
+        "total": 15,
+        "i": 6,
+        "n": 5
+      },
+      "output": "Total: 15",
+      "actionEn": "printf(\"Total: %d\\n\", total)",
+      "descEn": "Print the final total",
+      "outputEn": "Total: 15"
+    },
+    {
+      "line": 11,
+      "action": "return total;",
+      "desc": "Retorna o resultado",
+      "vars": {
+        "total": 15,
+        "i": 6,
+        "n": 5
+      },
+      "descEn": "Return the result"
+    }
+  ]
+}

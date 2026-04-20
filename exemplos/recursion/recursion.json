@@ -1,0 +1,208 @@
+{
+  "name": "Recursão",
+  "codeLines": [
+    "1   int fact(int x) {",
+    "2       if (x <= 1) {",
+    "3           return 1;",
+    "4       }",
+    "5       return x * fact(x - 1);",
+    "6   }",
+    "7   ",
+    "8   int n = 4;",
+    "9   int result = fact(n);",
+    "10  printf(\"Result: %d\\n\", result);",
+    "11  return result;"
+  ],
+  "codeLinesEn": [
+    "1   int fact(int x) {",
+    "2       if (x <= 1) {",
+    "3           return 1;",
+    "4       }",
+    "5       return x * fact(x - 1);",
+    "6   }",
+    "7   ",
+    "8   int n = 4;",
+    "9   int result = fact(n);",
+    "10  printf(\"Result: %d\\n\", result);",
+    "11  return result;"
+  ],
+  "variableKeys": ["x", "n", "result"],
+  "steps": [
+    {
+      "line": 8,
+      "action": "int n = 4;",
+      "desc": "Define o valor inicial para calcular a recursão",
+      "vars": {
+        "n": 4
+      },
+      "descEn": "Set the initial value for recursion"
+    },
+    {
+      "line": 9,
+      "action": "result = fact(n);",
+      "desc": "Chama a função recursiva fact com n",
+      "vars": {
+        "n": 4,
+        "result": null
+      },
+      "descEn": "Call the recursive function fact with n"
+    },
+    {
+      "line": 1,
+      "action": "if (x <= 1)? (4 <= 1)",
+      "desc": "Avalia a condição com x = 4",
+      "vars": {
+        "x": 4,
+        "n": 4,
+        "result": null
+      },
+      "actionEn": "if (x <= 1)? (4 <= 1)",
+      "descEn": "Evaluate the condition with x = 4"
+    },
+    {
+      "line": 5,
+      "action": "return x * fact(x - 1) (4 * fact(3))",
+      "desc": "Faz a chamada recursiva para x = 3",
+      "vars": {
+        "x": 4,
+        "n": 4,
+        "result": null
+      },
+      "actionEn": "return x * fact(x - 1) (4 * fact(3))",
+      "descEn": "Make the recursive call for x = 3"
+    },
+    {
+      "line": 1,
+      "action": "if (x <= 1)? (3 <= 1)",
+      "desc": "Avalia o próximo quadro com x = 3",
+      "vars": {
+        "x": 3,
+        "n": 4,
+        "result": null
+      },
+      "actionEn": "if (x <= 1)? (3 <= 1)",
+      "descEn": "Evaluate the next frame with x = 3"
+    },
+    {
+      "line": 5,
+      "action": "return x * fact(x - 1) (3 * fact(2))",
+      "desc": "Chama fact(2)",
+      "vars": {
+        "x": 3,
+        "n": 4,
+        "result": null
+      },
+      "actionEn": "return x * fact(x - 1) (3 * fact(2))",
+      "descEn": "Call fact(2)"
+    },
+    {
+      "line": 1,
+      "action": "if (x <= 1)? (2 <= 1)",
+      "desc": "Testa x = 2",
+      "vars": {
+        "x": 2,
+        "n": 4,
+        "result": null
+      },
+      "actionEn": "if (x <= 1)? (2 <= 1)",
+      "descEn": "Test x = 2"
+    },
+    {
+      "line": 5,
+      "action": "return x * fact(x - 1) (2 * fact(1))",
+      "desc": "Chama fact(1)",
+      "vars": {
+        "x": 2,
+        "n": 4,
+        "result": null
+      },
+      "actionEn": "return x * fact(x - 1) (2 * fact(1))",
+      "descEn": "Call fact(1)"
+    },
+    {
+      "line": 1,
+      "action": "if (x <= 1)? (1 <= 1)",
+      "desc": "Testa o caso base com x = 1",
+      "vars": {
+        "x": 1,
+        "n": 4,
+        "result": null
+      },
+      "actionEn": "if (x <= 1)? (1 <= 1)",
+      "descEn": "Test the base case with x = 1"
+    },
+    {
+      "line": 3,
+      "action": "return 1;",
+      "desc": "Retorna 1 no caso base",
+      "vars": {
+        "x": 1,
+        "n": 4,
+        "result": 1
+      },
+      "actionEn": "return 1;",
+      "descEn": "Return 1 in the base case"
+    },
+    {
+      "line": 5,
+      "action": "computar 2 * 1 = 2",
+      "desc": "Retorna o resultado da camada anterior",
+      "vars": {
+        "x": 2,
+        "n": 4,
+        "result": 2
+      },
+      "actionEn": "compute 2 * 1 = 2",
+      "descEn": "Return the previous frame result"
+    },
+    {
+      "line": 5,
+      "action": "computar 3 * 2 = 6",
+      "desc": "Retorna para a camada original",
+      "vars": {
+        "x": 3,
+        "n": 4,
+        "result": 6
+      },
+      "actionEn": "compute 3 * 2 = 6",
+      "descEn": "Return to the original frame"
+    },
+    {
+      "line": 5,
+      "action": "computar 4 * 6 = 24",
+      "desc": "Recebe o resultado final da recursão",
+      "vars": {
+        "x": 4,
+        "n": 4,
+        "result": 24
+      },
+      "actionEn": "compute 4 * 6 = 24",
+      "descEn": "Receive the final recursion result"
+    },
+    {
+      "line": 10,
+      "action": "printf(\"Result: %d\\n\", result)",
+      "desc": "Exibe o resultado final da recursão",
+      "vars": {
+        "x": 4,
+        "n": 4,
+        "result": 24
+      },
+      "output": "Result: 24",
+      "actionEn": "printf(\"Result: %d\\n\", result)",
+      "descEn": "Print the final recursion result",
+      "outputEn": "Result: 24"
+    },
+    {
+      "line": 11,
+      "action": "return result;",
+      "desc": "Retorna o valor calculado",
+      "vars": {
+        "x": 4,
+        "n": 4,
+        "result": 24
+      },
+      "descEn": "Return the computed value"
+    }
+  ]
+}

@@ -1,0 +1,242 @@
+{
+  "name": "Break / Continue",
+  "codeLines": [
+    "1   int sum = 0;",
+    "2   for (int i = 1; i <= 5; i++) {",
+    "3       if (i == 4) {",
+    "4           continue;",
+    "5       }",
+    "6       if (i == 5) {",
+    "7           break;",
+    "8       }",
+    "9       sum = sum + i;",
+    "10  }",
+    "11  printf(\"Sum: %d\\n\", sum);",
+    "12  return sum;"
+  ],
+  "codeLinesEn": [
+    "1   int sum = 0;",
+    "2   for (int i = 1; i <= 5; i++) {",
+    "3       if (i == 4) {",
+    "4           continue;",
+    "5       }",
+    "6       if (i == 5) {",
+    "7           break;",
+    "8       }",
+    "9       sum = sum + i;",
+    "10  }",
+    "11  printf(\"Sum: %d\\n\", sum);",
+    "12  return sum;"
+  ],
+  "variableKeys": ["sum", "i"],
+  "steps": [
+    {
+      "line": 0,
+      "action": "int sum = 0;",
+      "desc": "Inicializa o acumulador",
+      "vars": {
+        "sum": 0
+      },
+      "descEn": "Initialize the accumulator"
+    },
+    {
+      "line": 2,
+      "action": "for (int i = 1; i <= 5; i++)",
+      "desc": "Começa o loop de 1 até 5",
+      "vars": {
+        "sum": 0,
+        "i": 1
+      },
+      "actionEn": "for (int i = 1; i <= 5; i++)",
+      "descEn": "Start the loop from 1 to 5"
+    },
+    {
+      "line": 3,
+      "action": "if (i == 4)?",
+      "desc": "Verifica se deve pular o valor 4",
+      "vars": {
+        "sum": 0,
+        "i": 1
+      },
+      "actionEn": "if (i == 4)?",
+      "descEn": "Check whether to skip value 4"
+    },
+    {
+      "line": 9,
+      "action": "sum = sum + i (0 + 1)",
+      "desc": "Soma 1",
+      "vars": {
+        "sum": 1,
+        "i": 1
+      },
+      "actionEn": "sum = sum + i (0 + 1)",
+      "descEn": "Add 1"
+    },
+    {
+      "line": 2,
+      "action": "i++",
+      "desc": "Avança para 2",
+      "vars": {
+        "sum": 1,
+        "i": 2
+      },
+      "actionEn": "i++",
+      "descEn": "Advance to 2"
+    },
+    {
+      "line": 3,
+      "action": "if (i == 4)?",
+      "desc": "Verifica se deve pular 4",
+      "vars": {
+        "sum": 1,
+        "i": 2
+      },
+      "actionEn": "if (i == 4)?",
+      "descEn": "Check whether to skip 4"
+    },
+    {
+      "line": 9,
+      "action": "sum = sum + i (1 + 2)",
+      "desc": "Soma 2",
+      "vars": {
+        "sum": 3,
+        "i": 2
+      },
+      "actionEn": "sum = sum + i (1 + 2)",
+      "descEn": "Add 2"
+    },
+    {
+      "line": 2,
+      "action": "i++",
+      "desc": "Avança para 3",
+      "vars": {
+        "sum": 3,
+        "i": 3
+      },
+      "actionEn": "i++",
+      "descEn": "Advance to 3"
+    },
+    {
+      "line": 3,
+      "action": "if (i == 4)?",
+      "desc": "Verifica se deve pular 4",
+      "vars": {
+        "sum": 3,
+        "i": 3
+      },
+      "actionEn": "if (i == 4)?",
+      "descEn": "Check whether to skip 4"
+    },
+    {
+      "line": 9,
+      "action": "sum = sum + i (3 + 3)",
+      "desc": "Soma 3",
+      "vars": {
+        "sum": 6,
+        "i": 3
+      },
+      "actionEn": "sum = sum + i (3 + 3)",
+      "descEn": "Add 3"
+    },
+    {
+      "line": 2,
+      "action": "i++",
+      "desc": "Avança para 4",
+      "vars": {
+        "sum": 6,
+        "i": 4
+      },
+      "actionEn": "i++",
+      "descEn": "Advance to 4"
+    },
+    {
+      "line": 3,
+      "action": "if (i == 4)?",
+      "desc": "Entra no continue porque i = 4",
+      "vars": {
+        "sum": 6,
+        "i": 4
+      },
+      "actionEn": "if (i == 4)?",
+      "descEn": "Enter continue because i = 4"
+    },
+    {
+      "line": 4,
+      "action": "continue;",
+      "desc": "Pula o restante do corpo e volta para o loop",
+      "vars": {
+        "sum": 6,
+        "i": 4
+      },
+      "actionEn": "continue;",
+      "descEn": "Skip the rest of the body and return to loop"
+    },
+    {
+      "line": 2,
+      "action": "i++",
+      "desc": "Incrementa para 5",
+      "vars": {
+        "sum": 6,
+        "i": 5
+      },
+      "actionEn": "i++",
+      "descEn": "Increment to 5"
+    },
+    {
+      "line": 3,
+      "action": "if (i == 4)?",
+      "desc": "Verifica se deve continuar",
+      "vars": {
+        "sum": 6,
+        "i": 5
+      },
+      "actionEn": "if (i == 4)?",
+      "descEn": "Check whether to continue"
+    },
+    {
+      "line": 6,
+      "action": "if (i == 5)?",
+      "desc": "Entrou no break porque i = 5",
+      "vars": {
+        "sum": 6,
+        "i": 5
+      },
+      "actionEn": "if (i == 5)?",
+      "descEn": "Enter break because i = 5"
+    },
+    {
+      "line": 7,
+      "action": "break;",
+      "desc": "Interrompe o loop antes de somar 5",
+      "vars": {
+        "sum": 6,
+        "i": 5
+      },
+      "actionEn": "break;",
+      "descEn": "Stop the loop before adding 5"
+    },
+    {
+      "line": 11,
+      "action": "printf(\"Sum: %d\\n\", sum)",
+      "desc": "Exibe a soma acumulada até o break",
+      "vars": {
+        "sum": 6,
+        "i": 5
+      },
+      "output": "Sum: 6",
+      "actionEn": "printf(\"Sum: %d\\n\", sum)",
+      "descEn": "Print the accumulated sum until break",
+      "outputEn": "Sum: 6"
+    },
+    {
+      "line": 12,
+      "action": "return sum;",
+      "desc": "Retorna o valor final",
+      "vars": {
+        "sum": 6,
+        "i": 5
+      },
+      "descEn": "Return the final value"
+    }
+  ]
+}

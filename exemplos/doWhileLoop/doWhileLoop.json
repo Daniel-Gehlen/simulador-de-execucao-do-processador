@@ -1,0 +1,204 @@
+{
+  "name": "Do / While Loop",
+  "codeLines": [
+    "1   int count = 0;",
+    "2   int total = 0;",
+    "3   ",
+    "4   do {",
+    "5       total = total + count;",
+    "6       count++;",
+    "7   } while (count < 3);",
+    "8   ",
+    "9   printf(\"Total: %d\\n\", total);",
+    "10  return total;"
+  ],
+  "codeLinesEn": [
+    "1   int count = 0;",
+    "2   int total = 0;",
+    "3   ",
+    "4   do {",
+    "5       total = total + count;",
+    "6       count++;",
+    "7   } while (count < 3);",
+    "8   ",
+    "9   printf(\"Total: %d\\n\", total);",
+    "10  return total;"
+  ],
+  "variableKeys": ["count", "total"],
+  "steps": [
+    {
+      "line": 0,
+      "action": "int count = 0;",
+      "desc": "Inicializa contador com 0",
+      "vars": {
+        "count": 0
+      },
+      "descEn": "Initialize the counter with 0"
+    },
+    {
+      "line": 1,
+      "action": "int total = 0;",
+      "desc": "Inicializa acumulador total",
+      "vars": {
+        "count": 0,
+        "total": 0
+      },
+      "descEn": "Initialize the total accumulator"
+    },
+    {
+      "line": 4,
+      "action": "executa o corpo do do / while",
+      "desc": "O corpo roda pelo menos uma vez antes de testar a condição",
+      "vars": {
+        "count": 0,
+        "total": 0
+      },
+      "actionEn": "execute the do / while body",
+      "descEn": "The body runs at least once before the condition is tested"
+    },
+    {
+      "line": 5,
+      "action": "total = total + count (0 + 0)",
+      "desc": "Adiciona o valor de count",
+      "vars": {
+        "count": 0,
+        "total": 0
+      },
+      "actionEn": "total = total + count (0 + 0)",
+      "descEn": "Add the value of count"
+    },
+    {
+      "line": 6,
+      "action": "count++",
+      "desc": "Incrementa count",
+      "vars": {
+        "count": 1,
+        "total": 0
+      },
+      "actionEn": "count++",
+      "descEn": "Increment count"
+    },
+    {
+      "line": 7,
+      "action": "Teste count < 3? (1 < 3)",
+      "desc": "Condição avaliada após o corpo",
+      "vars": {
+        "count": 1,
+        "total": 0
+      },
+      "actionEn": "Test count < 3? (1 < 3)",
+      "descEn": "Condition evaluated after the body"
+    },
+    {
+      "line": 4,
+      "action": "executa o corpo de novo",
+      "desc": "Volta para o início do bloco do/while",
+      "vars": {
+        "count": 1,
+        "total": 0
+      },
+      "actionEn": "execute the body again",
+      "descEn": "Return to the do/while block"
+    },
+    {
+      "line": 5,
+      "action": "total = total + count (0 + 1)",
+      "desc": "Soma o valor atual de count",
+      "vars": {
+        "count": 1,
+        "total": 1
+      },
+      "actionEn": "total = total + count (0 + 1)",
+      "descEn": "Add the current count value"
+    },
+    {
+      "line": 6,
+      "action": "count++",
+      "desc": "Incrementa count para 2",
+      "vars": {
+        "count": 2,
+        "total": 1
+      },
+      "actionEn": "count++",
+      "descEn": "Increment count to 2"
+    },
+    {
+      "line": 7,
+      "action": "Teste count < 3? (2 < 3)",
+      "desc": "Ainda verdadeiro",
+      "vars": {
+        "count": 2,
+        "total": 1
+      },
+      "actionEn": "Test count < 3? (2 < 3)",
+      "descEn": "Still true"
+    },
+    {
+      "line": 4,
+      "action": "executa o corpo de novo",
+      "desc": "O loop repete mais uma vez",
+      "vars": {
+        "count": 2,
+        "total": 1
+      },
+      "actionEn": "execute the body again",
+      "descEn": "The loop repeats one more time"
+    },
+    {
+      "line": 5,
+      "action": "total = total + count (1 + 2)",
+      "desc": "Adiciona o último count",
+      "vars": {
+        "count": 2,
+        "total": 3
+      },
+      "actionEn": "total = total + count (1 + 2)",
+      "descEn": "Add the last count"
+    },
+    {
+      "line": 6,
+      "action": "count++",
+      "desc": "Incrementa para 3",
+      "vars": {
+        "count": 3,
+        "total": 3
+      },
+      "actionEn": "count++",
+      "descEn": "Increment count to 3"
+    },
+    {
+      "line": 7,
+      "action": "Teste count < 3? (3 < 3)",
+      "desc": "Falso → sai do loop",
+      "vars": {
+        "count": 3,
+        "total": 3
+      },
+      "actionEn": "Test count < 3? (3 < 3)",
+      "descEn": "False → exit the loop"
+    },
+    {
+      "line": 9,
+      "action": "printf(\"Total: %d\\n\", total)",
+      "desc": "Exibe o total acumulado",
+      "vars": {
+        "count": 3,
+        "total": 3
+      },
+      "output": "Total: 3",
+      "actionEn": "printf(\"Total: %d\\n\", total)",
+      "descEn": "Print the accumulated total",
+      "outputEn": "Total: 3"
+    },
+    {
+      "line": 10,
+      "action": "return total;",
+      "desc": "Retorna o valor final",
+      "vars": {
+        "count": 3,
+        "total": 3
+      },
+      "descEn": "Return the final value"
+    }
+  ]
+}

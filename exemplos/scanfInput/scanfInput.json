@@ -1,0 +1,106 @@
+{
+  "name": "Entrada com scanf",
+  "codeLines": [
+    "1   int x;",
+    "2   int y;",
+    "3   printf(\"Digite dois números:\\n\");",
+    "4   scanf(\"%d %d\", &x, &y);",
+    "5   int sum = x + y;",
+    "6   printf(\"Soma: %d\\n\", sum);",
+    "7   return sum;"
+  ],
+  "codeLinesEn": [
+    "1   int x;",
+    "2   int y;",
+    "3   printf(\"Enter two numbers:\\n\");",
+    "4   scanf(\"%d %d\", &x, &y);",
+    "5   int sum = x + y;",
+    "6   printf(\"Sum: %d\\n\", sum);",
+    "7   return sum;"
+  ],
+  "variableKeys": ["x", "y", "sum"],
+  "steps": [
+    {
+      "line": 0,
+      "action": "int x;",
+      "desc": "Declara a variável x sem valor inicial",
+      "vars": {
+        "x": null
+      },
+      "descEn": "Declare variable x without initial value"
+    },
+    {
+      "line": 1,
+      "action": "int y;",
+      "desc": "Declara a variável y sem valor inicial",
+      "vars": {
+        "x": null,
+        "y": null
+      },
+      "descEn": "Declare variable y without initial value"
+    },
+    {
+      "line": 3,
+      "action": "printf(\"Digite dois números:\\n\")",
+      "desc": "Solicita ao usuário dois números",
+      "vars": {
+        "x": null,
+        "y": null
+      },
+      "output": "Digite dois números:",
+      "actionEn": "printf(\"Enter two numbers:\\n\")",
+      "descEn": "Ask the user for two numbers",
+      "outputEn": "Enter two numbers:"
+    },
+    {
+      "line": 4,
+      "action": "scanf(\"%d %d\", &x, &y)",
+      "desc": "Lê dois valores e armazena em x e y",
+      "vars": {
+        "x": 4,
+        "y": 5
+      },
+      "output": "Usuário digitou: 4 5",
+      "actionEn": "scanf(\"%d %d\", &x, &y)",
+      "descEn": "Read two values into x and y",
+      "outputEn": "User entered: 4 5"
+    },
+    {
+      "line": 5,
+      "action": "int sum = x + y;",
+      "desc": "Calcula a soma dos valores lidos",
+      "vars": {
+        "x": 4,
+        "y": 5,
+        "sum": 9
+      },
+      "actionEn": "int sum = x + y;",
+      "descEn": "Compute the sum of the read values"
+    },
+    {
+      "line": 6,
+      "action": "printf(\"Soma: %d\\n\", sum)",
+      "desc": "Exibe o resultado da soma",
+      "vars": {
+        "x": 4,
+        "y": 5,
+        "sum": 9
+      },
+      "output": "Soma: 9",
+      "actionEn": "printf(\"Sum: %d\\n\", sum)",
+      "descEn": "Print the sum result",
+      "outputEn": "Sum: 9"
+    },
+    {
+      "line": 7,
+      "action": "return sum;",
+      "desc": "Retorna a soma calculada",
+      "vars": {
+        "x": 4,
+        "y": 5,
+        "sum": 9
+      },
+      "descEn": "Return the calculated sum"
+    }
+  ]
+}

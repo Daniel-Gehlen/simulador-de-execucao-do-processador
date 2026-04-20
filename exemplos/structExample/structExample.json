@@ -1,0 +1,63 @@
+{
+  "name": "Struct",
+  "codeLines": [
+    "1   struct Person {",
+    "2       char name[10];",
+    "3       int age;",
+    "4   };",
+    "5   ",
+    "6   struct Person p = {\"Ana\", 25};",
+    "7   printf(\"%s has %d years\\n\", p.name, p.age);",
+    "8   return p.age;"
+  ],
+  "codeLinesEn": [
+    "1   struct Person {",
+    "2       char name[10];",
+    "3       int age;",
+    "4   };",
+    "5   ",
+    "6   struct Person p = {\"Ana\", 25};",
+    "7   printf(\"%s has %d years\\n\", p.name, p.age);",
+    "8   return p.age;"
+  ],
+  "variableKeys": ["p"],
+  "steps": [
+    {
+      "line": 1,
+      "action": "struct Person { ... }",
+      "desc": "Define o tipo composto Person com nome e idade",
+      "vars": {},
+      "descEn": "Define the composite type Person with name and age"
+    },
+    {
+      "line": 6,
+      "action": "struct Person p = {\"Ana\", 25};",
+      "desc": "Cria a variável p com campos name e age",
+      "vars": {
+        "p": "{name: Ana, age: 25}"
+      },
+      "descEn": "Create variable p with fields name and age"
+    },
+    {
+      "line": 7,
+      "action": "printf(\"%s has %d years\\n\", p.name, p.age)",
+      "desc": "Exibe o conteúdo da struct",
+      "vars": {
+        "p": "{name: Ana, age: 25}"
+      },
+      "output": "Ana has 25 years",
+      "actionEn": "printf(\"%s has %d years\\n\", p.name, p.age)",
+      "descEn": "Print the struct contents",
+      "outputEn": "Ana has 25 years"
+    },
+    {
+      "line": 8,
+      "action": "return p.age;",
+      "desc": "Retorna o campo age da struct",
+      "vars": {
+        "p": "{name: Ana, age: 25}"
+      },
+      "descEn": "Return the age field from the struct"
+    }
+  ]
+}

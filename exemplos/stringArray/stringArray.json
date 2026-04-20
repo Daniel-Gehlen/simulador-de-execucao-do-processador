@@ -1,0 +1,258 @@
+{
+  "name": "String / Char Array",
+  "codeLines": [
+    "1   char str[] = \"CLang\";",
+    "2   int i = 0;",
+    "3   ",
+    "4   while (str[i] != '\\0') {",
+    "5       printf(\"%c\\n\", str[i]);",
+    "6       i++;",
+    "7   }",
+    "8   ",
+    "9   printf(\"Done\\n\");",
+    "10  return 0;"
+  ],
+  "codeLinesEn": [
+    "1   char str[] = \"CLang\";",
+    "2   int i = 0;",
+    "3   ",
+    "4   while (str[i] != '\\0') {",
+    "5       printf(\"%c\\n\", str[i]);",
+    "6       i++;",
+    "7   }",
+    "8   ",
+    "9   printf(\"Done\\n\");",
+    "10  return 0;"
+  ],
+  "variableKeys": ["str", "i"],
+  "steps": [
+    {
+      "line": 0,
+      "action": "char str[] = \"CLang\";",
+      "desc": "Declara uma string de caracteres",
+      "vars": {
+        "str": "CLang"
+      },
+      "descEn": "Declare a character string"
+    },
+    {
+      "line": 1,
+      "action": "int i = 0;",
+      "desc": "Inicializa o índice i",
+      "vars": {
+        "str": "CLang",
+        "i": 0
+      },
+      "descEn": "Initialize the index i"
+    },
+    {
+      "line": 4,
+      "action": "Teste str[i] != '\\0'? (C != '\\0')",
+      "desc": "Verifica se o caractere atual não é o fim da string",
+      "vars": {
+        "str": "CLang",
+        "i": 0
+      },
+      "actionEn": "Test str[i] != '\\0'? (C != '\\0')",
+      "descEn": "Check that the current character is not the end of string"
+    },
+    {
+      "line": 5,
+      "action": "printf(\"%c\\n\", str[i])",
+      "desc": "Exibe o caractere atual",
+      "vars": {
+        "str": "CLang",
+        "i": 0
+      },
+      "output": "C",
+      "actionEn": "printf(\"%c\\n\", str[i])",
+      "descEn": "Print the current character",
+      "outputEn": "C"
+    },
+    {
+      "line": 6,
+      "action": "i++",
+      "desc": "Avança para o próximo caractere",
+      "vars": {
+        "str": "CLang",
+        "i": 1
+      },
+      "actionEn": "i++",
+      "descEn": "Move to the next character"
+    },
+    {
+      "line": 4,
+      "action": "Teste str[i] != '\\0'? (L != '\\0')",
+      "desc": "Verifica o próximo caractere",
+      "vars": {
+        "str": "CLang",
+        "i": 1
+      },
+      "actionEn": "Test str[i] != '\\0'? (L != '\\0')",
+      "descEn": "Check the next character"
+    },
+    {
+      "line": 5,
+      "action": "printf(\"%c\\n\", str[i])",
+      "desc": "Exibe L",
+      "vars": {
+        "str": "CLang",
+        "i": 1
+      },
+      "output": "L",
+      "actionEn": "printf(\"%c\\n\", str[i])",
+      "descEn": "Print L",
+      "outputEn": "L"
+    },
+    {
+      "line": 6,
+      "action": "i++",
+      "desc": "Próximo caractere",
+      "vars": {
+        "str": "CLang",
+        "i": 2
+      },
+      "actionEn": "i++",
+      "descEn": "Next character"
+    },
+    {
+      "line": 4,
+      "action": "Teste str[i] != '\\0'? (a != '\\0')",
+      "desc": "Ainda não chegou no fim",
+      "vars": {
+        "str": "CLang",
+        "i": 2
+      },
+      "actionEn": "Test str[i] != '\\0'? (a != '\\0')",
+      "descEn": "Still not end of string"
+    },
+    {
+      "line": 5,
+      "action": "printf(\"%c\\n\", str[i])",
+      "desc": "Exibe a",
+      "vars": {
+        "str": "CLang",
+        "i": 2
+      },
+      "output": "a",
+      "actionEn": "printf(\"%c\\n\", str[i])",
+      "descEn": "Print a",
+      "outputEn": "a"
+    },
+    {
+      "line": 6,
+      "action": "i++",
+      "desc": "Avança i para 3",
+      "vars": {
+        "str": "CLang",
+        "i": 3
+      },
+      "actionEn": "i++",
+      "descEn": "Advance i to 3"
+    },
+    {
+      "line": 4,
+      "action": "Teste str[i] != '\\0'? (n != '\\0')",
+      "desc": "Verifica ainda não fim",
+      "vars": {
+        "str": "CLang",
+        "i": 3
+      },
+      "actionEn": "Test str[i] != '\\0'? (n != '\\0')",
+      "descEn": "Check still not end"
+    },
+    {
+      "line": 5,
+      "action": "printf(\"%c\\n\", str[i])",
+      "desc": "Exibe n",
+      "vars": {
+        "str": "CLang",
+        "i": 3
+      },
+      "output": "n",
+      "actionEn": "printf(\"%c\\n\", str[i])",
+      "descEn": "Print n",
+      "outputEn": "n"
+    },
+    {
+      "line": 6,
+      "action": "i++",
+      "desc": "Avança i para o fim",
+      "vars": {
+        "str": "CLang",
+        "i": 4
+      },
+      "actionEn": "i++",
+      "descEn": "Advance i to the end"
+    },
+    {
+      "line": 4,
+      "action": "Teste str[i] != '\\0'? (g != '\\0')",
+      "desc": "Último caractere antes do fim",
+      "vars": {
+        "str": "CLang",
+        "i": 4
+      },
+      "actionEn": "Test str[i] != '\\0'? (g != '\\0')",
+      "descEn": "Last character before end"
+    },
+    {
+      "line": 5,
+      "action": "printf(\"%c\\n\", str[i])",
+      "desc": "Exibe g",
+      "vars": {
+        "str": "CLang",
+        "i": 4
+      },
+      "output": "g",
+      "actionEn": "printf(\"%c\\n\", str[i])",
+      "descEn": "Print g",
+      "outputEn": "g"
+    },
+    {
+      "line": 6,
+      "action": "i++",
+      "desc": "Move para o caractere nulo",
+      "vars": {
+        "str": "CLang",
+        "i": 5
+      },
+      "actionEn": "i++",
+      "descEn": "Move to the null character"
+    },
+    {
+      "line": 4,
+      "action": "Teste str[i] != '\\0'? (\\0 != '\\0')",
+      "desc": "Encontra o terminador de string",
+      "vars": {
+        "str": "CLang",
+        "i": 5
+      },
+      "actionEn": "Test str[i] != '\\0'? (\\0 != '\\0')",
+      "descEn": "Find the string terminator"
+    },
+    {
+      "line": 9,
+      "action": "printf(\"Done\\n\")",
+      "desc": "Finaliza a iteração da string",
+      "vars": {
+        "str": "CLang",
+        "i": 5
+      },
+      "output": "Done",
+      "actionEn": "printf(\"Done\\n\")",
+      "descEn": "Finish string iteration",
+      "outputEn": "Done"
+    },
+    {
+      "line": 10,
+      "action": "return 0;",
+      "desc": "Retorna 0 para indicar término",
+      "vars": {
+        "str": "CLang",
+        "i": 5
+      },
+      "descEn": "Return 0 to indicate completion"
+    }
+  ]
+}

@@ -1,0 +1,123 @@
+{
+  "name": "Switch",
+  "codeLines": [
+    "1   int option = 3;",
+    "2   int result = 0;",
+    "3   ",
+    "4   switch (option) {",
+    "5       case 1:",
+    "6           result = 10;",
+    "7           break;",
+    "8       case 2:",
+    "9           result = 20;",
+    "10          break;",
+    "11      case 3:",
+    "12          result = 30;",
+    "13          break;",
+    "14      default:",
+    "15          result = -1;",
+    "16  }",
+    "17  ",
+    "18  printf(\"Result: %d\\n\", result);",
+    "19  return result;"
+  ],
+  "codeLinesEn": [
+    "1   int option = 3;",
+    "2   int result = 0;",
+    "3   ",
+    "4   switch (option) {",
+    "5       case 1:",
+    "6           result = 10;",
+    "7           break;",
+    "8       case 2:",
+    "9           result = 20;",
+    "10          break;",
+    "11      case 3:",
+    "12          result = 30;",
+    "13          break;",
+    "14      default:",
+    "15          result = -1;",
+    "16  }",
+    "17  ",
+    "18  printf(\"Result: %d\\n\", result);",
+    "19  return result;"
+  ],
+  "variableKeys": ["option", "result"],
+  "steps": [
+    {
+      "line": 0,
+      "action": "int option = 3;",
+      "desc": "Define a opção escolhida",
+      "vars": {
+        "option": 3
+      },
+      "descEn": "Set the selected option"
+    },
+    {
+      "line": 1,
+      "action": "int result = 0;",
+      "desc": "Inicializa o resultado com 0",
+      "vars": {
+        "option": 3,
+        "result": 0
+      },
+      "descEn": "Initialize result to 0"
+    },
+    {
+      "line": 4,
+      "action": "switch (option)",
+      "desc": "Avalia a variável option para escolher um case",
+      "vars": {
+        "option": 3,
+        "result": 0
+      },
+      "actionEn": "switch (option)",
+      "descEn": "Evaluate option to choose a case"
+    },
+    {
+      "line": 11,
+      "action": "case 3: result = 30;",
+      "desc": "Opção 3 corresponde ao case 3",
+      "vars": {
+        "option": 3,
+        "result": 30
+      },
+      "actionEn": "case 3: result = 30;",
+      "descEn": "Option 3 matches case 3"
+    },
+    {
+      "line": 13,
+      "action": "break;",
+      "desc": "Interrompe a execução do switch",
+      "vars": {
+        "option": 3,
+        "result": 30
+      },
+      "actionEn": "break;",
+      "descEn": "Stop switch execution"
+    },
+    {
+      "line": 18,
+      "action": "printf(\"Result: %d\\n\", result)",
+      "desc": "Exibe o valor selecionado",
+      "vars": {
+        "option": 3,
+        "result": 30
+      },
+      "output": "Result: 30",
+      "actionEn": "printf(\"Result: %d\\n\", result)",
+      "descEn": "Print the selected value",
+      "outputEn": "Result: 30"
+    },
+    {
+      "line": 19,
+      "action": "return result;",
+      "desc": "Retorna o resultado do switch",
+      "vars": {
+        "option": 3,
+        "result": 30
+      },
+      "descEn": "Return the switch result"
+    }
+  ]
+}

@@ -13,6 +13,20 @@
     "10  ",
     "11  return resultado;"
   ],
+  "codeLinesEn": [
+    "1   int n = 5;",
+    "2   int result = 1;",
+    "3   ",
+    "4   for(int i = 1; i <= n; i++) {",
+    "5       printf(\"Multiplying by %d\\n\", i);",
+    "6       result = result * i;",
+    "7   }",
+    "8   ",
+    "9   printf(\"Factorial of %d is %d\\n\", n, result);",
+    "10  ",
+    "11  return result;"
+  ],
+  "variableKeys": ["n", "resultado", "i"],
   "steps": [
     {
       "line": 0,

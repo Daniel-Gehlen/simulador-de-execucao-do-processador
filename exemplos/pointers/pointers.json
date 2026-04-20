@@ -1,0 +1,107 @@
+{
+  "name": "Ponteiros",
+  "codeLines": [
+    "1   int value = 10;",
+    "2   int *ptr = &value;",
+    "3   ",
+    "4   printf(\"Value: %d\\n\", value);",
+    "5   printf(\"Pointer address: %p\\n\", ptr);",
+    "6   ",
+    "7   *ptr = 20;",
+    "8   printf(\"Value after change: %d\\n\", value);",
+    "9   return value;"
+  ],
+  "codeLinesEn": [
+    "1   int value = 10;",
+    "2   int *ptr = &value;",
+    "3   ",
+    "4   printf(\"Value: %d\\n\", value);",
+    "5   printf(\"Pointer address: %p\\n\", ptr);",
+    "6   ",
+    "7   *ptr = 20;",
+    "8   printf(\"Value after change: %d\\n\", value);",
+    "9   return value;"
+  ],
+  "variableKeys": ["value", "ptr"],
+  "steps": [
+    {
+      "line": 0,
+      "action": "int value = 10;",
+      "desc": "Declara variável value e inicializa com 10",
+      "vars": {
+        "value": 10
+      },
+      "descEn": "Declare variable value and initialize it to 10"
+    },
+    {
+      "line": 1,
+      "action": "int *ptr = &value;",
+      "desc": "Declara ponteiro ptr e atribui o endereço de value",
+      "vars": {
+        "value": 10,
+        "ptr": "&value"
+      },
+      "descEn": "Declare pointer ptr and assign it the address of value"
+    },
+    {
+      "line": 4,
+      "action": "printf(\"Value: %d\\n\", value)",
+      "desc": "Exibe o valor atual",
+      "vars": {
+        "value": 10,
+        "ptr": "&value"
+      },
+      "output": "Value: 10",
+      "actionEn": "printf(\"Value: %d\\n\", value)",
+      "descEn": "Print the current value",
+      "outputEn": "Value: 10"
+    },
+    {
+      "line": 5,
+      "action": "printf(\"Pointer address: %p\\n\", ptr)",
+      "desc": "Exibe o endereço armazenado em ptr",
+      "vars": {
+        "value": 10,
+        "ptr": "&value"
+      },
+      "output": "Pointer address: &value",
+      "actionEn": "printf(\"Pointer address: %p\\n\", ptr)",
+      "descEn": "Print the address stored in ptr",
+      "outputEn": "Pointer address: &value"
+    },
+    {
+      "line": 7,
+      "action": "*ptr = 20;",
+      "desc": "Usa o ponteiro para alterar value indiretamente",
+      "vars": {
+        "value": 20,
+        "ptr": "&value"
+      },
+      "actionEn": "*ptr = 20;",
+      "descEn": "Use the pointer to change value indirectly"
+    },
+    {
+      "line": 8,
+      "action": "printf(\"Value after change: %d\\n\", value)",
+      "desc": "Exibe o novo valor alterado via ponteiro",
+      "vars": {
+        "value": 20,
+        "ptr": "&value"
+      },
+      "output": "Value after change: 20",
+      "actionEn": "printf(\"Value after change: %d\\n\", value)",
+      "descEn": "Print the new value changed through the pointer",
+      "outputEn": "Value after change: 20"
+    },
+    {
+      "line": 9,
+      "action": "return value;",
+      "desc": "Retorna o valor final",
+      "vars": {
+        "value": 20,
+        "ptr": "&value"
+      },
+      "descEn": "Return the final value"
+    }
+  ]
+}
